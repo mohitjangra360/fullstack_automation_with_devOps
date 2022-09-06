@@ -55,3 +55,17 @@
 09/06/2022 10:37:15 AM: INFO: Driver [C:\Users\Mohit\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
 09/06/2022 10:37:16 AM: INFO: Open Browser
 09/06/2022 10:37:19 AM: INFO: Close Browser
+09/06/2022 12:44:39 PM: INFO: ====== WebDriver manager ======
+09/06/2022 12:44:40 PM: INFO: Get LATEST chromedriver version for google-chrome 104.0.5112
+09/06/2022 12:44:41 PM: INFO: Driver [C:\Users\Mohit\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
+09/06/2022 12:44:42 PM: INFO: Open Browser
+09/06/2022 12:45:45 PM: INFO: ====== WebDriver manager ======
+09/06/2022 12:45:46 PM: INFO: Get LATEST chromedriver version for google-chrome 104.0.5112
+09/06/2022 12:45:46 PM: INFO: Driver [C:\Users\Mohit\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
+09/06/2022 12:45:48 PM: INFO: Open Browser
+09/06/2022 12:46:34 PM: INFO: Close Browser
+09/06/2022 12:52:16 PM: INFO: ====== WebDriver manager ======
+09/06/2022 12:52:16 PM: INFO: Get LATEST chromedriver version for google-chrome 104.0.5112
+09/06/2022 12:52:17 PM: INFO: Driver [C:\Users\Mohit\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
+09/06/2022 12:52:18 PM: INFO: Open Browser
+09/06/2022 12:52:23 PM: INFO: Close Browser

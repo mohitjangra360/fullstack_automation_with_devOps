@@ -1,7 +1,6 @@
 from behave import *
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-from Pages.Login.LoginPage import LoginPage
 from Utilities.CustomLogger import LogGen
 from Utilities.readProperty import ReadConfig
 
