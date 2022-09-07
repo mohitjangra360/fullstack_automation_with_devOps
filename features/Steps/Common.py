@@ -1,7 +1,11 @@
+import time
+
 from behave import *
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
+from Pages.Common_Method.CommonMathod import CommonMethod
 from Pages.Login.LoginPage import LoginPage
 from Utilities.CustomLogger import LogGen
 from Utilities.readProperty import ReadConfig
@@ -26,7 +30,7 @@ def close_browser(context):
     context.driver.close()
 
 
-@step("User On Login Page")
+@step("I am on Login Page")
 def user_on_login_page(context):
     global logopage
     actual_title = context.driver.title
@@ -37,7 +41,7 @@ def user_on_login_page(context):
         assert False
 
 
-@step("User login as admin")
+@step("I login as admin")
 def user_login_as_admin(context):
     common_method = LoginPage(context.driver)
     common_method.setUsername(username)
@@ -45,3 +49,31 @@ def user_login_as_admin(context):
     common_method.clickOnLogin()
 
 
+@step("I wait {} seconds")
+def wait_on(context, wait_on):
+    wait_time = int(wait_on)
+    time.sleep(wait_time)
+
+
+@step('I should see "{}"')
+def i_should_see(context, textValue):
+    v = CommonMethod(context.driver)
+    v.i_should_see(textValue)
+
+
+@step('I should see "{}" input field with {}')
+def step_impl(context, val, locator):
+    v = CommonMethod(context.driver)
+    v.i_should_see_input_field(val, locator)
+
+
+@step('I should see checkbox "{}" with {}')
+def step_impl(context, value, locator):
+    v = CommonMethod(context.driver)
+    v.i_should_see_checkbox(value, locator)
+
+
+@step('I should see button "{}" with {}')
+def step_impl(context, value, locator):
+    v = CommonMethod(context.driver)
+    v.i_should_see_button(value, locator)

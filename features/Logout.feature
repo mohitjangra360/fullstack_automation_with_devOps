@@ -6,4 +6,4 @@ Feature: Logout
   Background:
     Given Open Browser
   Scenario: Verify clear cache
-    Given User login as admin
+    Given I login as admin
