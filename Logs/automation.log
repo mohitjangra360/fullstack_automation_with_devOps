@@ -69,3 +69,29 @@
 09/06/2022 12:52:17 PM: INFO: Driver [C:\Users\Mohit\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
 09/06/2022 12:52:18 PM: INFO: Open Browser
 09/06/2022 12:52:23 PM: INFO: Close Browser
+09/06/2022 05:53:05 PM: INFO: ====== WebDriver manager ======
+09/06/2022 05:53:06 PM: INFO: Get LATEST chromedriver version for google-chrome 104.0.5112
+09/06/2022 05:53:07 PM: INFO: About to download new driver from https://chromedriver.storage.googleapis.com/104.0.5112.79/chromedriver_win32.zip
+09/06/2022 05:53:23 PM: INFO: Driver has been saved in cache [C:\Users\rahul\.wdm\drivers\chromedriver\win32\104.0.5112]
+09/06/2022 05:53:25 PM: INFO: Open Browser
+09/06/2022 05:53:28 PM: INFO: Close Browser
+09/06/2022 05:55:48 PM: INFO: ====== WebDriver manager ======
+09/06/2022 05:55:48 PM: INFO: Get LATEST chromedriver version for google-chrome 104.0.5112
+09/06/2022 05:55:49 PM: INFO: Driver [C:\Users\rahul\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
+09/06/2022 05:55:50 PM: INFO: Open Browser
+09/06/2022 05:55:55 PM: INFO: Close Browser
+09/06/2022 06:38:11 PM: INFO: ====== WebDriver manager ======
+09/06/2022 06:38:12 PM: INFO: Get LATEST chromedriver version for google-chrome 104.0.5112
+09/06/2022 06:38:13 PM: INFO: Driver [C:\Users\rahul\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
+09/06/2022 06:38:15 PM: INFO: Open Browser
+09/06/2022 06:38:19 PM: INFO: Close Browser
+09/06/2022 06:39:40 PM: INFO: ====== WebDriver manager ======
+09/06/2022 06:39:40 PM: INFO: Get LATEST chromedriver version for google-chrome 104.0.5112
+09/06/2022 06:39:41 PM: INFO: Driver [C:\Users\rahul\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
+09/06/2022 06:39:43 PM: INFO: Open Browser
+09/06/2022 06:39:47 PM: INFO: Close Browser
+09/06/2022 06:42:35 PM: INFO: ====== WebDriver manager ======
+09/06/2022 06:42:36 PM: INFO: Get LATEST chromedriver version for google-chrome 104.0.5112
+09/06/2022 06:42:37 PM: INFO: Driver [C:\Users\rahul\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
+09/06/2022 06:42:38 PM: INFO: Open Browser
+09/06/2022 06:42:43 PM: INFO: Close Browser
