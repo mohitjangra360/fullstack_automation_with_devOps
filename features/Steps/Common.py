@@ -1,11 +1,15 @@
 from behave import *
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+
+from Pages.Login.LoginPage import LoginPage
 from Utilities.CustomLogger import LogGen
 from Utilities.readProperty import ReadConfig
 
 baseUrl = ReadConfig.getApplicationURL()
 mylog = LogGen.loggen()
+username = ReadConfig.getUserName()
+password = ReadConfig.getPassword()
 
 
 @step("Open Browser")
@@ -31,3 +35,13 @@ def user_on_login_page(context):
         assert True
     else:
         assert False
+
+
+@step("User login as admin")
+def user_login_as_admin(context):
+    common_method = LoginPage(context.driver)
+    common_method.setUsername(username)
+    common_method.setPassword(password)
+    common_method.clickOnLogin()
+
+
