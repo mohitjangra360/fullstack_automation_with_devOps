@@ -7,3 +7,7 @@ Feature: Logout
     Given Open Browser
   Scenario: Verify clear cache
     Given I login as admin
+
+
+
+

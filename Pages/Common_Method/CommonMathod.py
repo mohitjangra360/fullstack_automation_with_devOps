@@ -42,3 +42,7 @@ class CommonMethod:
             assert True
         else:
             assert False
+
+
+
+
