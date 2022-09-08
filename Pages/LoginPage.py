@@ -3,7 +3,6 @@ from telnetlib import EC
 from selenium.webdriver.common.by import By
 
 
-
 class LoginPage:
     username_by_id = "Email"
     password_by_name = "Password"
@@ -22,4 +21,4 @@ class LoginPage:
 
     def clickOnLogin(self):
         self.driver.find_element(By.XPATH, self.login_btn_by_xpath).click()
-        time.sleep(10)
+        time.sleep(3)

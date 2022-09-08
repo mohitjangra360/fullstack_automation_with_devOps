@@ -2,7 +2,8 @@ from behave import *
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
-from Pages.Login.LoginPage import LoginPage
+from Pages.Common_Method import CommonMethod
+from Pages.LoginPage import LoginPage
 from Utilities.CustomLogger import LogGen
 from Utilities.readProperty import ReadConfig
 
@@ -45,3 +46,13 @@ def user_login_as_admin(context):
     common_method.clickOnLogin()
 
 
+@step('I should see "{}"')
+def i_should_see(context, value):
+    text = CommonMethod(context.driver)
+    text.i_should_see(value)
+
+
+@step('I should see "{}" input field by {}')
+def i_should_see_input_field(context, value, locator):
+    input = CommonMethod(context.driver)
+    input.i_should_see_input_field(value, locator)
