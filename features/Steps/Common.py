@@ -3,6 +3,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
 from Pages.Common_Method import CommonMethod
+from Pages.Dashboard.LogoutPage import LogoutPage
 from Pages.LoginPage import LoginPage
 from Utilities.CustomLogger import LogGen
 from Utilities.readProperty import ReadConfig
@@ -38,6 +39,18 @@ def user_on_login_page(context):
         assert False
 
 
+@step('I should see "{}"')
+def i_should_see(context, value):
+    text = CommonMethod(context.driver)
+    text.i_should_see(value)
+
+
+@step('I should see "{}" input field by {}')
+def i_should_input_field(context, value, locator):
+    input = CommonMethod(context.driver)
+    input.i_should_see_input_field(value, locator)
+
+
 @step("User login as admin")
 def user_login_as_admin(context):
     common_method = LoginPage(context.driver)
@@ -46,13 +59,5 @@ def user_login_as_admin(context):
     common_method.clickOnLogin()
 
 
-@step('I should see "{}"')
-def i_should_see(context, value):
-    text = CommonMethod(context.driver)
-    text.i_should_see(value)
 
 
-@step('I should see "{}" input field by {}')
-def i_should_see_input_field(context, value, locator):
-    input = CommonMethod(context.driver)
-    input.i_should_see_input_field(value, locator)
