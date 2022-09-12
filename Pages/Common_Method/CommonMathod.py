@@ -43,6 +43,21 @@ class CommonMethod:
         else:
             assert False
 
+    def select_side_item_value(self, SelectValue, SideBarItem):
+        Side_item = f"//ul[@class='nav nav-pills nav-sidebar flex-column nav-legacy']//a[@href='#' and @class='nav-link']//p[contains(text(),'{SideBarItem}')]"
+        self.driver.find_element(By.XPATH, Side_item).click()
+        time.sleep(1)
+        selectValue = f"//p[text()='{SelectValue}']"
+        self.driver.find_element(By.XPATH, selectValue).click()
+        time.sleep(3)
 
-
-
+    def i_goto(self, X, Y, Z):
+        Side_item = f"//ul[@class='nav nav-pills nav-sidebar flex-column nav-legacy']//a[@href='#' and @class='nav-link']//p[contains(text(),'{X}')]"
+        self.driver.find_element(By.XPATH, Side_item).click()
+        time.sleep(1)
+        selectValue = f"//*[text()[contains(., '{Y}')]]"
+        self.driver.find_element(By.XPATH, selectValue).click()
+        time.sleep(1)
+        selectValue = f"//*[text()[contains(., '{Z}')]]"
+        self.driver.find_element(By.XPATH, selectValue).click()
+        time.sleep(3)

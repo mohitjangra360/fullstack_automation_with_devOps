@@ -79,4 +79,13 @@ def step_impl(context, value, locator):
     v.i_should_see_button(value, locator)
 
 
+@step('Select "{}" from "{}"')
+def select_side_item_value(context, SelectValue, SideBarItem):
+    v = CommonMethod(context.driver)
+    v.select_side_item_value(SelectValue, SideBarItem)
 
+
+@step("I goto {X} >> {Y} >> {Z}")
+def i_goto(context, X, Y, Z):
+    v = CommonMethod(context.driver)
+    v.i_goto(X, Y, Z)

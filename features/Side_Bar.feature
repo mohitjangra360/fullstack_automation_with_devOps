@@ -7,6 +7,10 @@ Feature: Side Bar
     And I login as admin
 
   Scenario: Verify Side Menu Bar UI
-#    Given I should see logo
-#    And I should see search box
+    Given I should see logo
+    And I should see search box
     And I should see all side menu item is visible and clickable
+
+    Scenario: Select Any Value From Menu Item
+      Given Select " Products" from "Catalog"
+      And I goto Reports >> Customer reports >> Customers by order total
