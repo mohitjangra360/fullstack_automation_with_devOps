@@ -74,7 +74,7 @@ def step_impl(context, value, locator):
 
 
 @step('I should see button "{}" with {}')
-def step_impl(context, value, locator):
+def i_should_see_button(context, value, locator):
     v = CommonMethod(context.driver)
     v.i_should_see_button(value, locator)
 
