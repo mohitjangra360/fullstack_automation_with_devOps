@@ -40,5 +40,3 @@ class TestFilePage:
             time.sleep(2)
 
 
-
-

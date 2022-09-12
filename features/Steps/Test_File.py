@@ -9,7 +9,6 @@ def i_should_see_log0(context):
     logo.i_should_see_logo()
 
 
-
 @step("I should see search box")
 def i_should_see_search_box(context):
     search_box = TestFilePage(context.driver)
