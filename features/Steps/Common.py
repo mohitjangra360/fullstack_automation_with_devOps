@@ -56,3 +56,5 @@ def i_should_see(context, value):
 def i_should_see_input_field(context, value, locator):
     input = CommonMethod(context.driver)
     input.i_should_see_input_field(value, locator)
+
+

@@ -171,3 +171,7 @@
 09/08/2022 10:04:15 AM: INFO: Get LATEST chromedriver version for google-chrome 104.0.5112
 09/08/2022 10:04:16 AM: INFO: Driver [C:\Users\Mohit\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
 09/08/2022 10:04:17 AM: INFO: Open Browser
+09/08/2022 12:14:24 PM: INFO: ====== WebDriver manager ======
+09/08/2022 12:14:25 PM: INFO: Get LATEST chromedriver version for google-chrome 104.0.5112
+09/08/2022 12:14:26 PM: INFO: Driver [C:\Users\Mohit\.wdm\drivers\chromedriver\win32\104.0.5112\chromedriver.exe] found in cache
+09/08/2022 12:14:28 PM: INFO: Open Browser

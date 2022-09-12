@@ -21,6 +21,7 @@ class CommonMethod:
             assert True
         else:
             assert False
+
     #
     # def i_should_see_input_field(self, value, locator):
     #     input = self.driver.find_element(By.XPATH, f"//input[contains(@{locator},'{value}')]").is_displayed()
