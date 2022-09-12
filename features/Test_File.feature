@@ -14,6 +14,7 @@ Feature: SideBar
   Scenario: Verify Side Bar Search Box Is Visible
     Given I should see search box
 
+
      @SB_03
   Scenario: Verify side menu bar item is visible as main header
        Given I should see all side menu item is visible
