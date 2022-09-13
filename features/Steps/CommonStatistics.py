@@ -1,6 +1,6 @@
 from behave import *
 
-from Pages.Dashboard.CommonStatisticsPage import CommonStatisticsPage
+from Pages.CommonStatisticsPage import CommonStatisticsPage
 
 
 

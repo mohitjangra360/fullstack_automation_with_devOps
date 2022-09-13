@@ -1,6 +1,6 @@
 from behave import *
 
-from Pages.Dashboard.LogoutPage import LogoutPage
+from Pages.LogoutPage import LogoutPage
 
 
 @step('I would see "Logout"')
