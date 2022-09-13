@@ -64,7 +64,7 @@ def step_impl(context, childitem, parentitem):
     select_item.i_select_child_from_parent_side_menu_bar(childitem, parentitem)
 
 
-@step("I goto {x} >> {y} >> {z}")
-def i_goto(context, x, y, z):
-    select_item = CommonMethod(context.driver)
-    select_item.i_goto(x, y, z)
+@step("I goto {X} >> {Y} >> {Z}")
+def i_goto(context, X, Y, Z):
+    v = CommonMethod(context.driver)
+    v.i_goto(X, Y, Z)

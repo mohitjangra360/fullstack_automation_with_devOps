@@ -20,4 +20,4 @@ Feature: SideBar
 
   Scenario: Verify user able to select and click on side menu item
 #    Given Select "Customer reports" from "Reports"
-    Given I goto Report >> Customer reports >> Customer by order total
+    And I goto Reports >> Customer reports >> Customers by order total
