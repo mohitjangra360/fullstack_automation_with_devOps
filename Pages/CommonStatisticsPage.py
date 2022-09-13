@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 
 
-
 class CommonStatisticsPage:
     common_stats_By_xpath = "(//div[@class = 'card-title'])[2]"
 

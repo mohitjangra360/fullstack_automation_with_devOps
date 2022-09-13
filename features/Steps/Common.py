@@ -58,3 +58,13 @@ def i_should_see_input_field(context, value, locator):
     input.i_should_see_input_field(value, locator)
 
 
+@step('Select "{}" from "{}"')
+def step_impl(context, childitem, parentitem):
+    select_item = CommonMethod(context.driver)
+    select_item.i_select_child_from_parent_side_menu_bar(childitem, parentitem)
+
+
+@step("I goto {x} >> {y} >> {z}")
+def i_goto(context, x, y, z):
+    select_item = CommonMethod(context.driver)
+    select_item.i_goto(x, y, z)

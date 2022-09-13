@@ -17,3 +17,7 @@ Feature: SideBar
      @SB_03
   Scenario: Verify side menu bar item is visible as main header
        Given I should see all side menu item is visible
+
+  Scenario: Verify user able to select and click on side menu item
+#    Given Select "Customer reports" from "Reports"
+    Given I goto Report >> Customer reports >> Customer by order total

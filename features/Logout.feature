@@ -9,7 +9,10 @@ Feature: Verify Logout Page
     And User login as admin
 
   Scenario: Verify user is able to see logout button after successfully login
-    Given I would see "Logout"
+    Given User should see Searchbar
+    Then I would see "Logout"
 
   Scenario: Verify user is able to logout after clicking on Logout button
     Given click on Logout button
+    Then I should see "Admin area demo"
+    And I should see "Log in"
