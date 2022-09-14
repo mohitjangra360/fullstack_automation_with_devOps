@@ -16,5 +16,4 @@ class Export:
             assert False
 
     def user_should_click_export(self):
-
         self.driver.find_element(By.XPATH, self.Export_dropdown_Xpath).click()

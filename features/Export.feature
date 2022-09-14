@@ -14,7 +14,6 @@ Feature: Product page
     And User login as admin
     And Select "Products" from "Catalog"
 
-
   Scenario: User able to see export button
    Given User should see export
     And User able to click in export
