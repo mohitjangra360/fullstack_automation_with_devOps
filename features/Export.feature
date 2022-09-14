@@ -9,9 +9,9 @@ Feature: Product page
 3.Click on Export Button for download.
 
   Background:
-  Given Open Browser
-  And User On Login Page
-  And User login as admin
+    Given Open Browser
+    And User On Login Page
+    And User login as admin
     And Select "Products" from "Catalog"
 
 

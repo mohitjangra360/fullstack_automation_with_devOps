@@ -3,7 +3,6 @@ from behave import *
 from Pages.Catalog.Export import Export
 
 
-
 @step("User should see export")
 def user_should_see_export(context):
     expo = Export(context.driver)
