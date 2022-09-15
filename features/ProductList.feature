@@ -6,9 +6,12 @@ Feature: Product List and Product Edit
     Given Open Browser
     And User On Login Page
     And User login as admin
-    Then I Select "Products" from "Catalog"
+    Then Select "Products" from "Catalog"
 
   @C_PL_01
   Scenario: Verify Product list columns
     Given I should see columns in Product list
 
+  Scenario: Verify Popup
+    Given click on import button
+    And click on choose file
