@@ -1,3 +1,5 @@
+import time
+
 from behave import *
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -68,3 +70,8 @@ def step_impl(context, childitem, parentitem):
 def i_goto(context, X, Y, Z):
     v = CommonMethod(context.driver)
     v.i_goto(X, Y, Z)
+
+
+@step("I wait {} seconds")
+def step_impl(context, wait):
+    time.sleep(int(wait))
