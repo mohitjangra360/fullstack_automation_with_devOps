@@ -59,7 +59,20 @@ class ProductListPage:
     def i_edit_the_Full_description(self, edited_name):
         self.driver.switch_to.frame(self.driver.find_element(By.XPATH, "//iframe[@id='FullDescription_ifr']"))
         self.driver.find_element(By.XPATH, "//body[@id='tinymce']").send_keys(f' {edited_name}')
+        self.driver.switch_to.default_content()
 
     def i_edit_SKU(self, edited_name):
         self.driver.find_element(By.XPATH, "//input[@id='Sku']").send_keys(f' {edited_name}')
 
+    def i_click_publish_checkbox(self):
+        self.driver.find_element(By.XPATH, "//input[@id='Published']").click()
+
+    def click_on_import(self):
+        self.driver.find_element(By.XPATH, "//button[@name='importexcel']").click()
+        time.sleep(3)
+        # self.driver.getWindowHandles()
+        # self.driver.switchTo().window(handle);
+
+    def click_on_choose_file(self):
+        self.driver.find_element(By.XPATH, "//div[@id='importexcel-window']//form//input[@id='importexcelfile']").send_keys('D:\Automation\\fullstack_automation_with_devOps\\test.py')
+        time.sleep(5)

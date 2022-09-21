@@ -38,12 +38,3 @@ Feature: Product List and Product Edit
       Then I edit SKU with "Test SKU"
       Then I click on Published checkbox
       And I wait 10 seconds
-#      And click on back to Product list
-
-    @C_PL_05
-    Scenario: Verify User is able to edit the product from product list
-      Given I should able to click on edit btn of first product in list
-      Then I switch from advance to basic mode
-      Then I verify cards under basic mode
-      Then I edit the fields under each card
-      And click on back to Product list
