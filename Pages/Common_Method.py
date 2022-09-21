@@ -22,6 +22,12 @@ class CommonMethod:
         else:
             assert False
 
+    def i_should_see_expand_collapes_btn(self, value, locator):
+        btn = self.driver.find_element(By.XPATH, f"//button[contains(@{locator},'{value}')]")
+        btn_status = btn.is_displayed()
+        if btn_status:
+            assert True
+
     #
     # def i_should_see_input_field(self, value, locator):
     #     input = self.driver.find_element(By.XPATH, f"//input[contains(@{locator},'{value}')]").is_displayed()
