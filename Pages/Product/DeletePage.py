@@ -1,16 +1,13 @@
 import time
 
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
-
 
 class Delete:
 
     def __init__(self, driver):
         self.driver = driver
 
-    def go_to_product_page(self, childitem, parentitem):
+    def go_to_childitem_page(self, childitem, parentitem):
         ParentItem = f"//ul[@class='nav nav-pills nav-sidebar flex-column nav-legacy']//a[@href='#' and @class='nav-link']//p[contains(text(),'{parentitem}')]"
         self.driver.find_element(By.XPATH, ParentItem).click()
         time.sleep(1)
@@ -18,7 +15,7 @@ class Delete:
         self.driver.find_element(By.XPATH, childitem).click()
         time.sleep(3)
 
-    def user_should_able_to_see_Import_Button(self, value):
+    def user_should_able_to_see_Delete_Button(self, value):
 
         Button = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
         display_button = self.driver.find_element(By.XPATH, Button).is_displayed()
@@ -27,15 +24,39 @@ class Delete:
         else:
             assert False
 
-    def user_should_able_to_click_Import_Button(self, value):
+    def user_should_able_to_click_Delete_Button(self, value):
 
-        self.driver.find_element(By.XPATH, "//input[@value='1']").click()
+        if 'dataTables_empty' in self.driver.page_source:
+            Button = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
+            self.driver.find_element(By.XPATH, Button).click()
+            time.sleep(3)
+        else:
+            Checkbox_values = "//tbody//input[@class='checkboxGroups']"
+            get_checkboxvalues = self.driver.find_elements(By.XPATH, Checkbox_values)
+            Value_list=[]
 
-        Button = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
-        self.driver.find_element(By.XPATH, Button).click()
-        #time.sleep(5)
+            for all_value in get_checkboxvalues:
+                value_text = all_value.get_attribute('value')
+                Value_list.append(value_text)
+                print(Value_list)
 
-        element = WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_element_located((By.CLASS_NAME, "modal-dialog")))
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, f"//tbody//input[@value= {Value_list[0]}]").click()
+            time.sleep(2)
 
-       # modal_container = self.driver.find_element(By.XPATH, "//div[@class='modal-dialog']")
+            Button = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
+            self.driver.find_element(By.XPATH, Button).click()
+            time.sleep(5)
 
+    def user_should_able_to_click_YES_delete_popup(self):
+        Click_YES = "//div[@class='modal-content']//div[@class='modal-footer']//button[contains(text(), 'Yes')]"
+        Click_OK = "//div[@id='nothingSelectedAlert-action-alert']//div[@class='modal-footer']//span[contains(text(), 'Ok')]"
+
+        nothing_selected_popUP = "//div[@id='nothingSelectedAlert-info']"
+        self.driver.find_element(By.XPATH, Click_YES).click()
+        time.sleep(2)
+
+        if nothing_selected_popUP in self.driver.page_source:
+            self.driver.find_element(By.XPATH, Click_OK).click()
+        else:
+            print("deleted done")
