@@ -6,7 +6,7 @@ from Pages.Dashboard.New_customer_page import NewCustomerPage
 
 @step('I should see button "{}" with {}')
 def step_impl(context, value, locator):
-    btn = NewCustomerPage(context.driver)
+    btn = CommonMethod(context.driver)
     btn.i_should_see_expand_collapes_btn(value, locator)
 
 

@@ -1,5 +1,5 @@
 # Created by Aditya at 13-09-2022
-Feature: Delete (selected)
+Feature: Product Delete (selected)
   # Enter feature description here
 
   Background:
@@ -11,4 +11,5 @@ Feature: Delete (selected)
   Scenario: IMPORT ACTIONS
     Given Verify user must be able to go on "Products" from "Catalog"
     Given Verify user must be able to see "Delete (selected)" Button
-    And Verify user must be able to click on "Delete (selected)" Button
+    And Verify user must be able to click "Delete (selected)" Button
+    And Verify user must be able to click YES on Delete POPUP
