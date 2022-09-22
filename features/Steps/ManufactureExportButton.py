@@ -8,10 +8,10 @@ def i_should_see_export_button(context):
     exp = ManufactureExport(context.driver)
     exp.i_should_see_export_button()
 
-@step("I click on export button")
-def i_click_on_export_button(context):
- exp_click = ManufactureExport(context.driver)
- exp_click.i_should_click_on_export_button()
+#@step("I click on export button")
+#def i_click_on_export_button(context):
+ #exp_click = ManufactureExport(context.driver)
+ #exp_click.i_should_click_on_export_button()
 
 
 @step("I should click on both dropdown list")
