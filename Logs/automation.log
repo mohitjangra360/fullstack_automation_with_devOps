@@ -764,3 +764,23 @@
 09/20/2022 05:51:41 PM: INFO: Get LATEST chromedriver version for google-chrome 105.0.5195
 09/20/2022 05:51:41 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\105.0.5195\chromedriver.exe] found in cache
 09/20/2022 05:51:43 PM: INFO: Open Browser
+09/21/2022 10:41:47 AM: INFO: ====== WebDriver manager ======
+09/21/2022 10:41:47 AM: INFO: Get LATEST chromedriver version for google-chrome 105.0.5195
+09/21/2022 10:41:48 AM: INFO: There is no [win32] chromedriver for browser 105.0.5195 in cache
+09/21/2022 10:41:48 AM: INFO: About to download new driver from https://chromedriver.storage.googleapis.com/105.0.5195.52/chromedriver_win32.zip
+09/21/2022 10:41:53 AM: INFO: Driver has been saved in cache [C:\Users\Ibran Ali\.wdm\drivers\chromedriver\win32\105.0.5195]
+09/21/2022 10:41:54 AM: INFO: Open Browser
+09/21/2022 10:42:45 AM: INFO: ====== WebDriver manager ======
+09/21/2022 10:42:46 AM: INFO: Get LATEST chromedriver version for google-chrome 105.0.5195
+09/21/2022 10:43:30 AM: INFO: ====== WebDriver manager ======
+09/21/2022 10:43:31 AM: INFO: Get LATEST chromedriver version for google-chrome 105.0.5195
+09/21/2022 10:43:31 AM: INFO: Driver [C:\Users\Ibran Ali\.wdm\drivers\chromedriver\win32\105.0.5195\chromedriver.exe] found in cache
+09/21/2022 10:43:33 AM: INFO: Open Browser
+09/21/2022 10:43:42 AM: INFO: ====== WebDriver manager ======
+09/21/2022 10:43:43 AM: INFO: Get LATEST chromedriver version for google-chrome 105.0.5195
+09/21/2022 10:43:44 AM: INFO: Driver [C:\Users\Ibran Ali\.wdm\drivers\chromedriver\win32\105.0.5195\chromedriver.exe] found in cache
+09/21/2022 10:43:45 AM: INFO: Open Browser
+09/21/2022 10:44:16 AM: INFO: ====== WebDriver manager ======
+09/21/2022 10:44:16 AM: INFO: Get LATEST chromedriver version for google-chrome 105.0.5195
+09/21/2022 10:44:19 AM: INFO: Driver [C:\Users\Ibran Ali\.wdm\drivers\chromedriver\win32\105.0.5195\chromedriver.exe] found in cache
+09/21/2022 10:44:20 AM: INFO: Open Browser
