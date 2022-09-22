@@ -19,3 +19,8 @@ class ReadConfig:
     def getPassword():
         password = config.get('common info', 'password')
         return password
+
+    @staticmethod
+    def goto_catalog_products():
+        products = config.get('page url', 'catalog_products')
+        return products
