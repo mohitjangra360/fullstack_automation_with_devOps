@@ -2,10 +2,9 @@ import time
 
 from behave import *
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
-from Pages.Common_Method.CommonMathod import CommonMethod
+from Pages.CommonMathod import CommonMethod
 from Pages.Login.LoginPage import LoginPage
 from Utilities.CustomLogger import LogGen
 from Utilities.readProperty import ReadConfig
@@ -15,6 +14,18 @@ mylog = LogGen.loggen()
 username = ReadConfig.getUserName()
 password = ReadConfig.getPassword()
 
+
+# catalog_products = ReadConfig.goto_catalog_products()
+
+
+@step('I am goto "{}" Page')
+def i_am_on_page(context, page):
+    if page == "Products":
+        context.driver.get(ReadConfig.goto_catalog_products())
+    elif page == "Categories":
+        print('d')
+    else:
+        print("check your url and other setting maybe something wrong with ini file")
 
 @step("Open Browser")
 def launch_browser(context):

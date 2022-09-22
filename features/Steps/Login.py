@@ -1,6 +1,5 @@
 from behave import *
 
-from Pages.Common_Method.CommonMathod import CommonMethod
 from Pages.Login.LoginPage import LoginPage
 
 

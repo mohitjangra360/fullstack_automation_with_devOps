@@ -61,3 +61,11 @@ class CommonMethod:
         selectValue = f"//*[text()[contains(., '{Z}')]]"
         self.driver.find_element(By.XPATH, selectValue).click()
         time.sleep(3)
+
+    def i_am_on_page(self, page):
+        if page == "Products":
+            # self.driver.navigate().to()
+            self.driver.open('https://admin-demo.nopcommerce.com/Admin/Category/List')
+
+
+
