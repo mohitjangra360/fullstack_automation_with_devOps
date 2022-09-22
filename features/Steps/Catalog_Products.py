@@ -99,6 +99,7 @@ def set_mail_for_cust(context):
     btn.set_mail_for_cust()
 
 
+
 @step('I set Password "{}"')
 def set_password(context, password):
     btn = Catalog_Product(context.driver)

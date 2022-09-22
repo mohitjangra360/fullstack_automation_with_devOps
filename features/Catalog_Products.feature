@@ -137,3 +137,4 @@ Feature: Catalog >> Products
     And I set customer role as "Registered"
 
 
+
