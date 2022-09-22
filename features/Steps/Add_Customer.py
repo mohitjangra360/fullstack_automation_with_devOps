@@ -17,12 +17,20 @@ def click_on_menu_link_item_for_cust(context):
     a = Add_Customer(context.driver)
     a.click_on_menu_link_item_for_cust()
 
+@step("I verify add new button")
+def verify_add_new_cust_btn(context):
+    a = Add_Customer(context.driver)
+    a.Verify_add_new_cust_btn_on_Page()
 
 @step("I click on add new button")
 def click_on_add_new_cust_btn(context):
     a = Add_Customer(context.driver)
     a.click_on_add_new_cust_btn()
 
+@step('I verify page title "{}"')
+def click_on_add_new_cust_btn(context, title):
+    a = Add_Customer(context.driver)
+    a.verify_create_page_title(title)
 
 @step("I set Email")
 def set_mail_for_cust(context):

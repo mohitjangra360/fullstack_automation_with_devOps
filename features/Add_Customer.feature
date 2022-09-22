@@ -9,7 +9,8 @@ Feature: Add Customer >> Customer
 
     @SB_01
   Scenario: Verify user able to add new customer
-    Given I click on add new button
+      Given Verify add new button
+      Given I click on add new button
       And I set Email
       And I set Password "1234"
       And I set First name as "XYz"
