@@ -413,3 +413,122 @@ class Catalog_Product:
 
     def user_mark_product_as_new(self, mark):
         self.driver.find_element(By.ID, f"{mark}").click()
+
+    def i_should_see_delete_button(self, value):
+        delete_button_xpath = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
+        display_delete_button = self.driver.find_element(By.XPATH, delete_button_xpath).is_displayed()
+        if display_delete_button:
+            assert True
+        else:
+            assert False
+
+    def i_should_click_on_delete_button(self, value):
+        click_on_delete_Button = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
+        self.driver.find_element(By.XPATH, click_on_delete_Button).click()
+
+    def i_should_see_popup_message(self, value):
+        see_popup_message = f"//div[@class='modal-content']//*[text()[contains(.,'{value}')]]"
+        self.driver.find_element(By.XPATH, see_popup_message).is_displayed()
+        if see_popup_message:
+            assert True
+        else:
+            assert False
+
+    def user_should_see_import_button(self, value):
+        see_import_button_xpath = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
+        display_import_button = self.driver.find_element(By.XPATH, see_import_button_xpath).is_displayed()
+        if display_import_button == True:
+            assert True
+        else:
+            assert False
+
+    def user_should_click_on_import_button(self, value):
+        click_on_import_button = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
+        self.driver.find_element(By.XPATH, click_on_import_button).click()
+
+    def user_should_see_popup_message(self, value):
+        see_popup_message = self.driver.find_element(By.XPATH,
+                                                     f"//div[@class='modal-dialog']//div//div//h4[contains(text(),'{value}')]").is_displayed()
+        if see_popup_message == True:
+            assert True
+        else:
+            assert False
+
+    def user_should_click_on_import_from_excel(self, value):
+        self.driver.find_element(By.XPATH, f"//div[@class='modal-footer']//button[contains(.,'{value}')]").click()
+
+    def user_should_select_path_test_data(self, path):
+        ram = self.driver.find_element(By.XPATH, "//div[@class='modal-dialog']//form//input[@id='importexcelfile']")
+        ram.send_keys(f"{path}")
+
+    def user_should_able_to_see_error_message_of_Import(self, childitem):
+        ErrorMessage_1 = '×\nFor security purposes, the feature you have requested is not available on the demo site.'
+        ErrorMessage_2 = '×\nPlease upload a file'
+        ErrorMessage_3 = '×\nSequence contains no elements'
+        SuccessfulMessage = f'×\n{childitem} have been imported successfully.'
+
+        Error_POPUP_text = "//div[@class='alert alert-danger alert-dismissable']"
+        Success_popup_text = "//div[@class='alert alert-success alert-dismissable']"
+
+        if 'alert alert-danger alert-dismissable' in self.driver.page_source:
+            geterrorValue = self.driver.find_element(By.XPATH, Error_POPUP_text)
+            item_error_text = geterrorValue.text
+
+            if item_error_text == ErrorMessage_1:
+                assert True
+            elif item_error_text == ErrorMessage_2:
+                assert True
+            elif item_error_text == ErrorMessage_3:
+                assert True
+            else:
+                assert False
+        else:
+            getsuccessValue = self.driver.find_element(By.XPATH, Success_popup_text)
+            item_success_text = getsuccessValue.text
+
+            if item_success_text == SuccessfulMessage:
+                assert True
+            else:
+                assert False
+
+    def user_should_click_on_search_button(self, value):
+        see_search_button = self.driver.find_element(By.XPATH,
+                                                     f"//div[@class='text-center col-12']//*[text()[contains(.,'{value}')]]").click()
+
+    def user_should_select_product_type(self, value):
+        product_type = Select(self.driver.find_element(By.XPATH, "//select[@id='SearchProductTypeId']"))
+        product_type.select_by_visible_text(value)
+
+    def user_should_be_able_to_see_edit_button(self):
+        see_edit_button = self.driver.find_element(By.XPATH,
+                                                   '//*[@id="products-grid"]/tbody/tr[5]/td[8]/a').is_displayed()
+        if see_edit_button == True:
+            assert True
+        else:
+            assert False
+
+    def user_should_be_able_to_click_on_edit_button(self):
+        self.driver.find_element(By.XPATH, '//*[@id="products-grid"]/tbody/tr[5]/td[8]/a').click()
+
+    def user_should_set_date_time_on_start_date(self, value):
+        self.driver.find_element(By.XPATH, "//input[@id='AvailableStartDateTimeUtc']").send_keys(value)
+
+    def user_should_be_able_to_click_on_save_button(self, value):
+        self.driver.find_element(By.XPATH,
+                                 f"//div[@class='float-right']//button[@name='save' and normalize-space()='{value}']")
+
+    def user_should_see_edit_button(self):
+        edit = self.driver.find_element(By.XPATH, '//*[@id="products-grid"]/tbody/tr[3]/td[8]/a').is_displayed()
+        if edit == True:
+            assert True
+        else:
+            assert False
+
+    def user_should_click_on_edit_button(self):
+        self.driver.find_element(By.XPATH, '//*[@id="products-grid"]/tbody/tr[3]/td[8]/a').click()
+
+    def user_should_checked_on_checkbox(self):
+        self.driver.find_element(By.XPATH, "//input[@id='ShowOnHomepage']").click()
+
+    def i_set_display_order(self, value):
+        set = self.driver.find_element(By.XPATH, "//*[@id='DisplayOrder']").clear()

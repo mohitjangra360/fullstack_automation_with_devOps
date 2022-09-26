@@ -135,6 +135,18 @@ Feature: Catalog >> Products
     Then I should see saved successfully message
 
 
+  @PL_12
+  Scenario: Verify user must be able to import products using import button
+    Given user should see "Import" button
+    And user should click on "Import" button
+    And I wait 4 seconds
+    And user should see popup message "Import from Excel"
+    And user should select path "C:\nopcommnerce\Test_Data\products.xlsx"
+    And user should click to "Import from Excel" button
+    And I wait 2 seconds
+    Then user should see the Error Message of "Products" after click on import from excel
+
+
   @PL_13
   Scenario: Verify user must be able to see and click on "Delete(Selected)" button
     Given I should able to see "Delete (selected)" Button
@@ -150,6 +162,14 @@ Feature: Catalog >> Products
     And I should click "SearchWarehouseId" select field by "id" and select "Warehouse 1 (New York)"
     Then I should click "Search"
     And I see search result by Warehouse and count number of items
+
+
+  @PL_19
+  Scenario: Verify  user must be able to search products by products type
+    Given user should select products types "Simple"
+    And I wait 2 seconds
+    And I should click on "Search" button on product page
+    And I wait 4 seconds
 
   @PL_20
   Scenario: Verify  user must be able to search products by SKU
@@ -182,6 +202,16 @@ Feature: Catalog >> Products
     Then Click "save"
     Then I should see saved successfully message
 
+
+  @PL_33
+  Scenario: Verify user must be able to change product checkbox as show on home page under product info
+     Given user should be able to see Edit button
+     And user should able to click on Edit button
+     And I wait 3 seconds
+     And user should checked on checkbox
+     And I wait 6 seconds
+     And I set display order value "3"
+
   @PL_34
   Scenario: Verify user must be able to change Product type under product info
     Given I should see see product table
@@ -198,6 +228,17 @@ Feature: Catalog >> Products
     And I set customer role as "Guests"
     Then Click "save"
     Then I should see saved successfully message
+
+
+  @PL_40
+  Scenario: Verify user must be able to change product available start date under product info
+    Given user should be able to see "Edit" button
+    And user should able to click on "Edit" button
+    And I wait 2 seconds
+    And user should set "12/2/2022 12:00 AM" on product available start date field
+    And I wait 3 seconds
+    And user should be able to click on "Save" button
+    And I wait 10 seconds
 
   @PL_41
   Scenario: Verify user must be able to change product available end date under product info
