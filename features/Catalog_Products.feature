@@ -70,9 +70,9 @@ Feature: Catalog >> Products
   Verify user must be able to delete product picture under picture
   Background:
     Given Open Browser
-    And User On Login Page
-    And User login as admin
-    Then Select " Products" from "Catalog"
+    And I am On Login Page
+    And I login as admin
+    Then I Select " Products" from "Catalog"
 #    Then I am goto "Products" Page
 
 
@@ -115,26 +115,157 @@ Feature: Catalog >> Products
     Then I should see Export to Excel (all found)
     Then I should see Export to Excel (selected)
 
-#  @PL_07
-#  Scenario: Verify user must be able to click on export option under export button
-#    Given I should see "Export" button
-#    And I click On Export button
-#    hold par hai
-
   @PL_08
   Scenario: Verify user able to create new products
     Given I click on add new button
-    And I wait 5 seconds
-    And I set product name "Mohit"
+    And I wait 2 seconds
+    And I set product name "Product name"
     And I set short description "fgdsg"
-    And I set full description "fdsfds"
-    And I set Email
-    And I set Password "1234"
-    And I set First name as "XYz"
-    And I set Last name as "gfd"
-    And I select gender as "Male"
-    And I set dob as "5/1/2022"
-    And I set customer role as "Registered"
+    And I set full description "fdsfds sadasdasdas TEST"
+    And I select categories first "Computers" and second "Computers >> Notebooks"
+    And I select manufacturers "Apple"
+    And I set Product tags "Computer"
+    And I set Product type "Simple"
+    And I set customer role as "Guests"
+    And I set Vendor type "Vendor 1"
+    And I set Available start date "9/23/2022 12:00 AM"
+    And I set Available end date "11/22/2022 12:00 AM"
+    And I set price "500"
+    Then Click "save"
+    Then I should see saved successfully message
 
 
+  @PL_13
+  Scenario: Verify user must be able to see and click on "Delete(Selected)" button
+    Given I should able to see "Delete (selected)" Button
+    Then I should able to select product to delete
+    And I wait 10 seconds
+    And I should able to click "Delete (selected)" Button
+    Then I should able to click YES on Delete POPUP
+    And I wait 10 seconds
 
+    @PL_15
+  Scenario: Verify  user must be able to search products by warehouse
+    Given I should see "SearchWarehouseId" select field by id
+    And I should click "SearchWarehouseId" select field by "id" and select "Warehouse 1 (New York)"
+    Then I should click "Search"
+    And I see search result by Warehouse and count number of items
+
+  @PL_20
+  Scenario: Verify  user must be able to search products by SKU
+    Given I should see Go directly to product SKU field
+    Then I should able to enter product SKU DS_VA3_PC
+    Then I should able to click on Go button
+    And I wait 5 seconds
+    Then I should see SKU DS_VA3_PC on edit page of that product
+
+  @PL_22
+  Scenario: Verify user must be select multiple product in table by checkbox
+    Given I should see data table
+    And I should click all items checkboxes
+
+
+  @PL_27
+  Scenario: Verify user must be able to change product SKU number under product info
+    Given I should see see product table
+    Then I should see edit button of product Apple MacBook Pro 13-inch & able to click on that
+    Then I should see the product SKU field
+    Then I should able to change product Sku field by AP_MBP_15 with tag input & save it
+
+
+  @PL_29
+  Scenario: Verify user must be able to change product manufacturer under product info
+    Given I should see data table
+    And I should edit "Build your own computer" details by click "Edit"
+    Then I should see "Edit product details - Build your own computer"
+    And I select manufacturers "Apple"
+    Then Click "save"
+    Then I should see saved successfully message
+
+  @PL_34
+  Scenario: Verify user must be able to change Product type under product info
+    Given I should see see product table
+    Then I should see edit button of product Apple MacBook Pro 13-inch & able to click on that
+    Then I should see the product Product type field
+    Then I should able to change product ProductType field by Grouped (product with variants) with tag select & save it
+
+
+  @PL_36
+  Scenario: Verify user must be able to change product customer role under product info
+    Given I should see data table
+    And I should edit "Apple MacBook Pro 13-inch" details by click "Edit"
+    Then I should see "Edit product details - Apple MacBook Pro 13-inch"
+    And I set customer role as "Guests"
+    Then Click "save"
+    Then I should see saved successfully message
+
+  @PL_41
+  Scenario: Verify user must be able to change product available end date under product info
+    Given I should see see product table
+    Then I should see edit button of product Apple MacBook Pro 13-inch & able to click on that
+    Then I should see the product Available end date field
+    Then I should able to change product AvailableEndDate field by 10/10/2022 1:00:00 PM with tag input & save it
+
+
+  @PL_43
+  Scenario: Verify user must be able to change product Mark as new and Start date under product info
+    Given I should see data table
+    And I should edit "HP Spectre XT Pro UltraBook" details by click "Edit"
+    Then I should see "Edit product details - HP Spectre XT Pro UltraBook"
+    And I should Enable checkbox of "MarkAsNew"
+    And I set Available start date "9/23/2022 12:00 AM"
+    And I set Available end date "11/22/2022 12:00 AM"
+    Then Click "save"
+    Then I should see saved successfully message
+
+  @PL_48
+  Scenario: Verify user must be able to change product cost under product prices
+    Given I should see see product table
+    Then I should see edit button of product Apple MacBook Pro 13-inch & able to click on that
+    Then I should see the product Product cost field
+    Then I should able to change product cost field by 120 & save it
+
+
+  @PL_50
+  Scenario: Verify user must be able to change product shipping weight under shipping
+    Given I should see data table
+    And I should edit "Apple MacBook Pro 13-inch" details by click "Edit"
+    Then I should see "Edit product details - Apple MacBook Pro 13-inch"
+    And I set shipping weight "500"
+    Then Click "save"
+    Then I should see saved successfully message
+
+  @PL_55
+   Scenario: Verify user must be able to change product delivery date under shipping
+    Given I should see see product table
+    Then I should see edit button of product Apple MacBook Pro 13-inch & able to click on that
+    Then I should see the product Delivery date field
+    Then I should able to change product DeliveryDate field by 1-2 days with tag select & save it
+
+
+  @PL_57
+  Scenario: Verify user must be able to change product Stock quantity under inventory
+    Given I should see data table
+    And I should edit "Apple MacBook Pro 13-inch" details by click "Edit"
+    Then I should see "Edit product details - Apple MacBook Pro 13-inch"
+    And I set Minimum qty "1000"
+    And I set Maximum qty "1000"
+    Then Click "save"
+    Then I should see saved successfully message
+
+  @PL_62
+    Scenario: Verify user must be able to change product backorders under inventory
+     Given I should see see product table
+     Then I should see edit button of product Apple MacBook Pro 13-inch & able to click on that
+     Then I should see the product Backorders field
+     Then I should able to change product Backorder field by Allow qty below 0 with tag select & save it
+
+
+  @PL_64
+  Scenario: Verify user must be able to change product  maximum cart qty under inventory
+    Given I should see data table
+    And I should edit "Apple MacBook Pro 13-inch" details by click "Edit"
+    Then I should see "Edit product details - Apple MacBook Pro 13-inch"
+    And I set Maximum qty "1000"
+    Then Click "save"
+    Then I should see saved successfully message

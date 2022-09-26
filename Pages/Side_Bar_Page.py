@@ -39,31 +39,11 @@ class SideBarPage:
             if visible == True:
                 self.driver.find_element(By.XPATH, text).click()
                 time.sleep(2)
-                # self.driver.find_elements(By.XPATH, main_heading_xpath)
                 side_bar_item = self.driver.find_elements(By.XPATH, "//ul[@class='nav nav-pills nav-sidebar flex-column nav-legacy']//li//a")
-                # multi_checkbox_from_ui_status = multi_checkbox_from_ui.is_displayed()
                 all_bar_item = []
                 for get_bar_item in side_bar_item:
                     test = get_bar_item.get_attribute('href')
                     test = (test.replace('https://admin-demo.nopcommerce.com/Admin',''))
                     all_bar_item.append(test)
-                # result = list(filter(None, all_bar_item)) # none use for remove blank space or index from list
                 print(all_bar_item)
-
-        # for item in all_bar_item:
-        #     text = f"//a[contains(@href,'{item}')]"
-        #     self.driver.find_element(By.XPATH, text).click()
-        #     time.sleep(2)
-
-
-
-
-        # for box in multi_checkbox:
-        #     tester = box
-        #     xpath_link = self.driver.find_element(By.XPATH, f"//input[contains(@value,'{tester}')]")
-        #     xpath_link_status = xpath_link.is_displayed()
-        #     if xpath_link_status:
-        #         xpath_link.click()
-        #     else:
-        #         print("No checkbox found")
 

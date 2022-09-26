@@ -8,7 +8,7 @@ Feature: Login
 
   Background:
     Given Open Browser
-    And User On Login Page
+    And I am On Login Page
 
     @LP_01
   Scenario: Verify Login Page UI

@@ -1,6 +1,6 @@
 from behave import *
 
-from Pages.Side_Bar.Side_Bar_Page import SideBarPage
+from Pages.Side_Bar_Page import SideBarPage
 
 
 @step("I should see logo")

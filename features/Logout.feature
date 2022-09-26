@@ -5,12 +5,8 @@ Feature: Verify Logout Page
 
   Background:
     Given open browser
-    And User On Login Page
-    And User login as admin
-
-  Scenario: Verify user is able to see logout button after successfully login
-    Given User should see Searchbar
-    Then I would see "Logout"
+    And I am On Login Page
+    And I login as admin
 
   Scenario: Verify user is able to logout after clicking on Logout button
     Given click on Logout button

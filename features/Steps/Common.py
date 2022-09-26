@@ -29,7 +29,7 @@ def close_browser(context):
     context.driver.close()
 
 
-@step("User On Login Page")
+@step("I am On Login Page")
 def user_on_login_page(context):
     global logopage
     actual_title = context.driver.title
@@ -40,7 +40,7 @@ def user_on_login_page(context):
         assert False
 
 
-@step("User login as admin")
+@step("I login as admin")
 def user_login_as_admin(context):
     common_method = LoginPage(context.driver)
     common_method.setUsername(username)
@@ -60,7 +60,7 @@ def i_should_see_input_field(context, value, locator):
     input.i_should_see_input_field(value, locator)
 
 
-@step('Select "{}" from "{}"')
+@step('I Select "{}" from "{}"')
 def step_impl(context, childitem, parentitem):
     select_item = CommonMethod(context.driver)
     select_item.i_select_child_from_parent_side_menu_bar(childitem, parentitem)
@@ -75,3 +75,21 @@ def i_goto(context, X, Y, Z):
 @step("I wait {} seconds")
 def step_impl(context, wait):
     time.sleep(int(wait))
+
+
+@step('I should see "{}" select field by {}')
+def i_should_see_select_field(context, value, locator):
+    input = CommonMethod(context.driver)
+    input.i_should_see_select_field(value, locator)
+
+
+@step('I should click "{}" select field by "{}" and select "{}"')
+def i_should_click_selectfield(context, value, locator, select):
+    input = CommonMethod(context.driver)
+    input.i_should_click_select_field(value, locator, select)
+
+
+@step('I should click "{}"')
+def i_should_click_search_field(context, button):
+    butn = CommonMethod(context.driver)
+    butn.i_click_search(button)
