@@ -788,3 +788,8 @@
 09/22/2022 04:57:10 PM: INFO: Get LATEST chromedriver version for google-chrome 105.0.5195
 09/22/2022 04:57:11 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\105.0.5195\chromedriver.exe] found in cache
 09/22/2022 04:57:13 PM: INFO: Open Browser
+09/26/2022 10:27:02 AM: INFO: ====== WebDriver manager ======
+09/26/2022 10:27:02 AM: INFO: Get LATEST chromedriver version for google-chrome 105.0.5195
+09/26/2022 10:27:03 AM: INFO: About to download new driver from https://chromedriver.storage.googleapis.com/105.0.5195.52/chromedriver_win32.zip
+09/26/2022 10:27:09 AM: INFO: Driver has been saved in cache [C:\Users\Mohit\.wdm\drivers\chromedriver\win32\105.0.5195]
+09/26/2022 10:27:10 AM: INFO: Open Browser

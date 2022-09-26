@@ -72,7 +72,7 @@ Feature: Catalog >> Products
     Given Open Browser
     And I am On Login Page
     And I login as admin
-    Then I Select " Products" from "Catalog"
+    Then I Select "Products" from "Catalog"
 #    Then I am goto "Products" Page
 
 
