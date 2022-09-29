@@ -80,16 +80,25 @@ class CommonMethod:
         else:
             assert False
 
+    def i_should_see_select_field_in_search(self, val, locator):
+        select = self.driver.find_element(By.XPATH, f"//select[@{locator}='{val}']").is_displayed()
+        if select == True:
+            assert True
+        elif select == False:
+            self.driver.find_element(By.XPATH, "//div[@class='row search-row']").click()
+        else:
+            print("search bar not visible")
+
     def i_am_on_page(self, page):
         if page == "Products":
             # self.driver.navigate().to()
             self.driver.open('https://admin-demo.nopcommerce.com/Admin/Category/List')
 
     def i_should_click_select_field(self, value, locator, select):
-        self.driver.find_element(By.XPATH, f"//select[@{locator}='{value}']").click()
-        time.sleep(2)
-        self.driver.find_element(By.XPATH, f"//select[@{locator}='{value}']//option[contains(text(), '{select}')]").click()
-        time.sleep(2)
+            self.driver.find_element(By.XPATH, f"//select[@{locator}='{value}']").click()
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, f"//select[@{locator}='{value}']//option[contains(text(), '{select}')]").click()
+            time.sleep(2)
 
     def i_click_search(self, button):
         self.driver.find_element(By.XPATH, f"//button[contains(., '{button}')]").click()

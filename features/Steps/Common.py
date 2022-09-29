@@ -82,6 +82,11 @@ def i_should_see_select_field(context, value, locator):
     input = CommonMethod(context.driver)
     input.i_should_see_select_field(value, locator)
 
+@step('I should see search "{}" select field by "{}"')
+def i_should_see_select_field_in_search(context, value, locator):
+    input_bysearch = CommonMethod(context.driver)
+    input_bysearch.i_should_see_select_field_in_search(value, locator)
+
 
 @step('I should click "{}" select field by "{}" and select "{}"')
 def i_should_click_selectfield(context, value, locator, select):
