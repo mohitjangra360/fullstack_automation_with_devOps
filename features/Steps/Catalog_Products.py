@@ -337,3 +337,117 @@ def i_set_min_qty(context, qty):
 def i_set_min_qty(context, qty):
     quantity = Catalog_Product(context.driver)
     quantity.set_Max_cart_qty(qty)
+
+
+@step('I should see "{}" Button')
+def i_should_see_delete_button(context, value):
+    see_delete_button = Catalog_Product(context.driver)
+    see_delete_button.i_should_see_delete_button(value)
+
+
+@step('I should click on "{}" Button')
+def i_should_click_on_delete_button(context, value):
+    see_delete_button = Catalog_Product(context.driver)
+    see_delete_button.i_should_click_on_delete_button(value)
+
+
+@step('I should see popup message "{}"')
+def i_should_see_popup_message(context, value):
+    see_delete_button = Catalog_Product(context.driver)
+    see_delete_button.i_should_see_popup_message(value)
+
+
+@step('user should see "{}" button')
+def user_should_see_import_button(context, value):
+    see_import_button = Catalog_Product(context.driver)
+    see_import_button.user_should_see_import_button(value)
+
+
+@step('user should click on "{}" button')
+def user_should_on_click_import_button(context, value):
+    click_import_button = Catalog_Product(context.driver)
+    click_import_button.user_should_click_on_import_button(value)
+
+
+@step('user should see popup message "{}"')
+def user_should_see_popup_message(context, value):
+    see_popup_mesg = Catalog_Product(context.driver)
+    see_popup_mesg.user_should_see_popup_message(value)
+
+
+@step('user should select path "{}"')
+def user_should_select_path_test_data(context, path):
+    select_path = Catalog_Product(context.driver)
+    select_path.user_should_select_path_test_data(path)
+
+
+@step('user should click to "{}" button')
+def user_should_click_to_import_from_excel(context, value):
+    click_on_import_excel = Catalog_Product(context.driver)
+    click_on_import_excel.user_should_click_on_import_from_excel(value)
+
+
+@step('user should see the Error Message of "{}" after click on import from excel')
+def step_impl(context, childitem):
+    error_message = Catalog_Product(context.driver)
+    error_message.user_should_able_to_see_error_message_of_Import(childitem)
+
+
+@step('I should click on "{}" button on product page')
+def user_should_click_on_search_button(context, value):
+    click_on_search_button = Catalog_Product(context.driver)
+    click_on_search_button.user_should_click_on_search_button(value)
+
+
+@given('user should select products types "{}"')
+def user_should_select_product_type(context, value):
+    select_product_type = Catalog_Product(context.driver)
+    select_product_type.user_should_select_product_type(value)
+
+
+@given('user should be able to see "Edit" button')
+def user_should_be_able_to_see_edit_button(context):
+    see_edit_button = Catalog_Product(context.driver)
+    see_edit_button.user_should_be_able_to_see_edit_button()
+
+
+@step('user should able to click on "Edit" button')
+def user_should_be_able_to_click_on_edit_button(context):
+    click_on_edit_button = Catalog_Product(context.driver)
+    click_on_edit_button.user_should_be_able_to_click_on_edit_button()
+
+
+@step('user should set "{}" on product available start date field')
+def user_should_set_date_time_on_start_date(context, value):
+    set_date_time = Catalog_Product(context.driver)
+    set_date_time.user_should_set_date_time_on_start_date(value)
+
+
+@step('user should be able to click on "{}" button')
+def user_should_be_able_to_click_on_save_button(context, value):
+    click_on_save_button = Catalog_Product(context.driver)
+    click_on_save_button.user_should_be_able_to_click_on_save_button(value)
+
+
+@given("user should be able to see Edit button")
+def user_should_see_edit_button(context):
+    see_edit_button_1 = Catalog_Product(context.driver)
+    see_edit_button_1.user_should_see_edit_button()
+
+
+@step("user should able to click on Edit button")
+def user_should_click_on_edit_button(context):
+    click_edit_button = Catalog_Product(context.driver)
+    click_edit_button.user_should_click_on_edit_button()
+
+
+@step("user should checked on checkbox")
+def user_should_checked_on_checkbox(context):
+    check = Catalog_Product(context.driver)
+    check.user_should_checked_on_checkbox()
+
+
+@step('I set display order value "{}"')
+def i_set_display_order_value(context, value):
+    display_order = Catalog_Product(context.driver)
+    display_order.i_set_display_order(value)
