@@ -57,14 +57,26 @@ class Catalog_Product:
     def i_click_on_delete_btn(self):
         self.driver.find_element(By.XPATH, "//button[@id='delete-selected']").click()
 
-    def i_set_products_name(self, product_name):
-        self.driver.find_element(By.XPATH, "//input[@id='Name']").send_keys(product_name)
+    def i_set_products_name(self, name):
+        self.driver.find_element(By.XPATH, "//input[@id='Name']").send_keys(name)
+
 
     def i_set_short_description(self, short_descp):
         self.driver.find_element(By.XPATH, "//textarea[@id='ShortDescription']").send_keys(short_descp)
 
     def i_set_full_description(self, full_descp):
-        self.driver.find_element(By.XPATH, "//textarea[@id='FullDescription']").send_keys(full_descp)
+        self.driver.switch_to.frame(self.driver.find_element(By.XPATH, "//iframe[@id='FullDescription_ifr']"))
+        self.driver.find_element(By.XPATH, "//body[@id='tinymce']").send_keys(full_descp)
+        time.sleep(2)
+        self.driver.switch_to.default_content()
+
+    def i_set_description(self, descp):
+        self.driver.switch_to.frame(self.driver.find_element(By.XPATH, "//iframe[@id='Description_ifr']"))
+        self.driver.find_element(By.XPATH, "//body[@id='tinymce']").send_keys(descp)
+        time.sleep(2)
+
+        self.driver.switch_to.default_content()
+
 
     def set_mail_for_cust(self):
         self.driver.find_element(By.XPATH, "//input[@id='Email']").send_keys(self.random_email() + "@gmail.com")
@@ -92,29 +104,27 @@ class Catalog_Product:
     def set_dob(self, dob):
         self.driver.find_element(By.XPATH, "//input[@id='DateOfBirth']").send_keys(dob)
 
-    def set_customer_role(self, role):
-        global listitem
-        select_role = self.driver.find_element(By.XPATH, "//li[@class='k-button']//span[2]")
-        if select_role.is_displayed():
+    def set_customer_role(self, first):
+        CustomerRole_list_by_xpath = "//div[@role='listbox']//input[@aria-describedby='SelectedCustomerRoleIds_taglist']"
+        self.driver.find_element(By.XPATH, CustomerRole_list_by_xpath).click()
+        time.sleep(2)
+
+        CustomerRole_list_values = "//div[@class='k-list-scroller']//ul[@id='SelectedCustomerRoleIds_listbox']//li"
+        get_CustomerRolelistvalues = self.driver.find_elements(By.XPATH, CustomerRole_list_values)
+        CustomerRole_values = []
+
+        for allcustomers_value in get_CustomerRolelistvalues:
+            CustomerRole_text = allcustomers_value.text
+            CustomerRole_values.append(CustomerRole_text)
+
+        if first in CustomerRole_values:
+            time.sleep(1)
+            self.driver.find_element(By.XPATH,
+                                     f"//div[@class='k-list-scroller']//ul[@id='SelectedCustomerRoleIds_listbox']//li[text()= '{first}']").click()
             time.sleep(2)
-            self.driver.find_element(By.XPATH, "//li[@class='k-button']//span[2]").click()
-        self.driver.find_element(By.XPATH, "(//div[@class='k-multiselect-wrap k-floatwrap'])[2]").click()
-        if role == 'Registered':
-            listitem = self.driver.find_element(By.XPATH, "//li[contains(text(),'Registered')]")
-            time.sleep(3)
-        elif role == 'Admin':
-            listitem = self.driver.find_element(By.XPATH, "//li[contains(text(),'Administrators')]")
-            time.sleep(3)
-        elif role == 'Forum':
-            listitem = self.driver.find_element(By.XPATH, "//li[contains(text(),'Forum Moderators')]")
-            time.sleep(3)
-        elif role == 'Guest':
-            listitem = self.driver.find_element(By.XPATH, "//li[contains(text(),'Guests')]")
-            time.sleep(3)
-        elif role == 'Vender':
-            listitem = self.driver.find_element(By.XPATH, "//li[contains(text(),'Vendors')]")
-            time.sleep(3)
-        self.driver.execute_script("arguments[0].click();", listitem)
+            # self.driver.find_element(By.XPATH, "//html").click()
+            # time.sleep(2)
+
 
     def i_select_product_to_delete(self):
         Checkbox_values = "//tbody//input[@class='checkboxGroups']"
@@ -243,8 +253,8 @@ class Catalog_Product:
         self.driver.find_element(By.XPATH,
                                  f"//div[@class='k-list-scroller']//ul[@id='SelectedCategoryIds_listbox']//li[text()='{second}']").click()
         time.sleep(2)
-        self.driver.find_element(By.XPATH, "//section[@class='content']").click()
-        time.sleep(2)
+        # self.driver.find_element(By.XPATH,("//body")).click()
+        # time.sleep(2)
 
     def set_Minimum_cart_qty(self, qty):
         minimum_qty = self.driver.find_element(By.XPATH,
@@ -272,8 +282,9 @@ class Catalog_Product:
 
     def set_price(self, price):
         pricefield = self.driver.find_element(By.XPATH, "//div[@id='product-price']//input[@id='Price']//..//input[1]")
-        if pricefield.is_displayed():
-            pricefield.clear()
+        check = pricefield.is_displayed()
+        if check:
+
             pricefield.send_keys(price)
             time.sleep(2)
         else:
@@ -314,7 +325,8 @@ class Catalog_Product:
 
     def set_product_tags(self, tag):
         time.sleep(2)
-        self.driver.execute_script(f"document.getElementById('ProductTags').getElementsByTagName('li').value='{tag}'")
+        self.driver.execute_script(f"document.getElementById('ProductTags').getElementsByTagName('div').value='test'")
+        #argument().click()
         time.sleep(2)
 
     def i_change_product_cost_and_save(self, cost):
@@ -356,23 +368,44 @@ class Catalog_Product:
                 self.driver.find_element(By.XPATH,
                                          f"//div[@id='products-grid_wrapper']//div//table//tbody//input[@value={i}]").click()
 
-    def select_edit_by_productname(self, productfullname, clickedit):
-        productname = "//div[@id='products-grid_wrapper']//div//table//tbody//tr//td[3]"
-        get_productname = self.driver.find_elements(By.XPATH, f"{productname}")
-        names_product = []
-        for n in get_productname:
-            name_text = n.text
-            names_product.append(name_text)
-        edit_button = f"//div[@id='products-grid_wrapper']//div//table//tbody//tr[contains(., '{productfullname}')]//td[contains(., '{clickedit}')]"
-        while True:
-            time.sleep(3)
-            try:
-                self.driver.find_element(By.XPATH, f"{edit_button}").click()
-                break
-            except Exception:
-                self.driver.find_element(By.XPATH,
-                                         "//div[@id='products-grid_paginate']//li[@id='products-grid_next']//a").click()
-            print("Product not in database which you entered")
+    def select_edit_by_name(self, fullname, clickedit):
+        Product_title = "Products / nopCommerce administration"
+        Categories_title = "Categories / nopCommerce administration"
+
+        if Product_title in self.driver.page_source:
+            edit_button = f"//div[@id='products-grid_wrapper']//div//table//tbody//tr[contains(., '{fullname}')]//td[contains(., '{clickedit}')]"
+            while True:
+                time.sleep(3)
+                try:
+                    self.driver.find_element(By.XPATH, f"{edit_button}").click()
+                    break
+                except Exception:
+                    self.driver.find_element(By.XPATH,
+                                             "//div[@id='products-grid_paginate']//li[@id='products-grid_next']//a").click()
+        elif Categories_title in self.driver.page_source:
+            edit_button = f"//div[@id='categories-grid_wrapper']//div//table//tbody//tr[contains(., '{fullname}')]//td[contains(., '{clickedit}')]"
+            while True:
+                time.sleep(3)
+                try:
+                    self.driver.find_element(By.XPATH, f"{edit_button}").click()
+                    break
+                except Exception:
+                    self.driver.find_element(By.XPATH,
+                                             "//div[@id='categories-grid_paginate']//li[@id='categories-grid_next']//a").click()
+        else:
+            assert False
+
+    def select_deletecheckbox_by_name(self, fullname):
+        full_name = f"//div[@id='categories-grid_wrapper']//div//table//tbody//tr//*[text()='{fullname}']//..//input"
+        get_fullname = self.driver.find_elements(By.XPATH, f"{full_name}")
+        checkboxvalue = []
+        for n in get_fullname:
+            name_text = n.get_attribute('value')
+            checkboxvalue.append(name_text)
+        checkbox = f"//div[@id='categories-grid_wrapper']//div//table//tbody//tr//*[text()='{fullname}']//..//input[@value='{checkboxvalue}']"
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, checkbox).click()
+        time.sleep(2)
 
     def select_categories_manufacturers(self, first):
         Manufacturers_list_by_xpath = "//div[@role='listbox']//input[@aria-describedby='SelectedManufacturerIds_taglist']"
@@ -389,11 +422,20 @@ class Catalog_Product:
             self.driver.find_element(By.XPATH,
                                      f"//div[@class='k-list-scroller']//ul[@id='SelectedManufacturerIds_listbox']//li[text()= '{first}']").click()
             time.sleep(2)
-            self.driver.find_element(By.XPATH, "//section[@class='content']").click()
-            time.sleep(2)
+            # self.driver.find_element(By.XPATH, "//section[@class='content']").click()
+            # time.sleep(2)
+
+    def move_to_advance(self):
+        Advance = "sidebar-mini layout-fixed control-sidebar-slide-open advanced-settings-mode"
+        Basic = "sidebar-mini layout-fixed control-sidebar-slide-open basic-settings-mode"
+
+        if Basic in self.driver.page_source:
+            self.driver.find_element(By.XPATH, "//div[@class='onoffswitch']//label").click()
+        else:
+            print("we're already in advance")
 
     def save_product_details(self, select):
-        self.driver.find_element(By.XPATH, f"//div[@class='float-right']//button[@name='{select}']").click()
+        self.driver.find_element(By.XPATH, f"//button[@name='{select}']").click()
         time.sleep(2)
 
     def verify_success_save(self):
@@ -413,6 +455,124 @@ class Catalog_Product:
 
     def user_mark_product_as_new(self, mark):
         self.driver.find_element(By.ID, f"{mark}").click()
+
+    def search_new_product_in_related_products(self):
+        time.sleep(2)
+        self.driver.switch_to.window(self.driver.window_handles[1])
+        time.sleep(2)
+
+    def i_search_relatedproducts_name(self, name):
+        self.driver.find_element(By.XPATH, "//input[@id='SearchProductName']").send_keys(name)
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, "//button[@id='search-products']").click()
+        time.sleep(2)
+
+        productname_value = "//div[@id='products-grid_wrapper']//div//table//tbody//tr//td[2]"
+        get_fullname = self.driver.find_elements(By.XPATH, f"{productname_value}")
+        tablevalue = []
+        for n in get_fullname:
+            name_text = n.text
+            tablevalue.append(name_text)
+        print(len(tablevalue))
+        if name in tablevalue:
+            checkbox_button = f"//div[@id='products-grid_wrapper']//div//table//tbody//tr[contains(., '{name}')]//td//input[@type='checkbox']"
+            self.driver.find_element(By.XPATH, checkbox_button).click()
+            time.sleep(2)
+        else:
+            print("no match")
+
+    def click_add_new_product_in_related_products(self):
+        tab_click = "//div[@id='product-related-products']//button[@data-card-widget='collapse']"
+        tabs = self.driver.find_element(By.ID, "btnAddNewRelatedProduct").is_displayed()
+        if tabs:
+            time.sleep(2)
+            self.driver.find_element(By.ID, "btnAddNewRelatedProduct").click()
+            time.sleep(3)
+        else:
+            self.driver.find_element(By.XPATH, f"{tab_click}").click()
+            time.sleep(2)
+            self.driver.find_element(By.ID, "btnAddNewRelatedProduct").click()
+            time.sleep(2)
+
+    def i_search_relatedproducts_category(self, name):
+        self.driver.find_element(By.XPATH, "//select[@id='SearchCategoryId']").click()
+        time.sleep(2)
+        categoryvaluetext = self.driver.find_elements(By.XPATH, "//select[@id='SearchCategoryId']//option")
+        category_value = []
+        for value in categoryvaluetext:
+            get_categoryvalue_text = value.text
+            category_value.append(get_categoryvalue_text)
+        if name in category_value:
+            self.driver.find_element(By.XPATH, f"//select[@id='SearchCategoryId']//option[text()= '{name}']").click()
+            time.sleep(2)
+        else:
+                print("value not in dropdown")
+
+        self.driver.find_element(By.XPATH, "//button[@id='search-products']").click()
+        time.sleep(2)
+        productname_value = "//div[@id='products-grid_wrapper']//div//table//tbody//tr//td[2]"
+        get_fullname = self.driver.find_elements(By.XPATH, f"{productname_value}")
+        tablevalue = []
+        for n in get_fullname:
+            name_text = n.text
+            tablevalue.append(name_text)
+        print(len(tablevalue))
+        if name in tablevalue:
+            checkbox_button = f"//div[@id='products-grid_wrapper']//div//table//tbody//tr[contains(., '{name}')]//td//input[@type='checkbox']"
+            self.driver.find_element(By.XPATH, checkbox_button).click()
+            time.sleep(2)
+        else:
+            print("no match")
+
+    def i_search_relatedproducts_Vendor(self, name):
+        self.driver.find_element(By.XPATH, "//select[@id='SearchVendorId']").click()
+        time.sleep(2)
+        Vendorvaluetext = self.driver.find_elements(By.XPATH, "//select[@id='SearchVendorId']//option")
+        Vendor_value = []
+        for value in Vendorvaluetext:
+            get_vendorvalue_text = value.text
+            Vendor_value.append(get_vendorvalue_text)
+        if name in Vendor_value:
+            self.driver.find_element(By.XPATH, f"//select[@id='SearchVendorId']//option[text()= '{name}']").click()
+            time.sleep(2)
+        else:
+            print("value not in dropdown")
+
+        self.driver.find_element(By.XPATH, "//button[@id='search-products']").click()
+        time.sleep(2)
+        productname_value = "//div[@id='products-grid_wrapper']//div//table//tbody//tr//td[2]"
+        get_fullname = self.driver.find_elements(By.XPATH, f"{productname_value}")
+        tablevalue = []
+        for n in get_fullname:
+            name_text = n.text
+            tablevalue.append(name_text)
+        print(len(tablevalue))
+        if name in tablevalue:
+            checkbox_button = f"//div[@id='products-grid_wrapper']//div//table//tbody//tr[contains(., '{name}')]//td//input[@type='checkbox']"
+            self.driver.find_element(By.XPATH, checkbox_button).click()
+            time.sleep(2)
+        else:
+            print("no match")
+
+    def verifynew_added_product_in_related_products_byname(self, name):
+
+        get_table_vlue = self.driver.find_elements(By.XPATH, "//div[@id='relatedproducts-grid_wrapper']//div//table//tbody//tr//td[1]")
+        get_value = []
+        for v in get_table_vlue:
+            name_text = v.text
+            get_value.append(name_text)
+        # if name in get_value:
+        #     assert True
+        # else:
+        #     assert False
+        while name in get_value:
+            time.sleep(3)
+            try:
+                assert True
+                break
+            except Exception:
+                self.driver.find_element(By.XPATH,
+                                         "//div[@id='products-grid_paginate']//li[@id='products-grid_next']//a").click()
 
     def i_should_see_delete_button(self, value):
         delete_button_xpath = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"

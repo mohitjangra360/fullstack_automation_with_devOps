@@ -119,6 +119,7 @@ Feature: Catalog >> Products
   Scenario: Verify user able to create new products
     Given I click on add new button
     And I wait 2 seconds
+    And I set page on Advance
     And I set product name "Product name"
     And I set short description "fgdsg"
     And I set full description "fdsfds sadasdasdas TEST"
@@ -156,7 +157,7 @@ Feature: Catalog >> Products
     Then I should able to click YES on Delete POPUP
     And I wait 10 seconds
 
-    @PL_15
+  @PL_15
   Scenario: Verify  user must be able to search products by warehouse
     Given I should see "SearchWarehouseId" select field by id
     And I should click "SearchWarehouseId" select field by "id" and select "Warehouse 1 (New York)"
@@ -174,16 +175,15 @@ Feature: Catalog >> Products
   @PL_20
   Scenario: Verify  user must be able to search products by SKU
     Given I should see Go directly to product SKU field
-    Then I should able to enter product SKU DS_VA3_PC
+    Then I should able to enter product SKU EG_GEM_NL
     Then I should able to click on Go button
     And I wait 5 seconds
-    Then I should see SKU DS_VA3_PC on edit page of that product
+    Then I should see SKU EG_GEM_NL on edit page of that product
 
   @PL_22
   Scenario: Verify user must be select multiple product in table by checkbox
     Given I should see data table
     And I should click all items checkboxes
-
 
   @PL_27
   Scenario: Verify user must be able to change product SKU number under product info
@@ -191,7 +191,6 @@ Feature: Catalog >> Products
     Then I should see edit button of product Apple MacBook Pro 13-inch & able to click on that
     Then I should see the product SKU field
     Then I should able to change product Sku field by AP_MBP_15 with tag input & save it
-
 
   @PL_29
   Scenario: Verify user must be able to change product manufacturer under product info
@@ -293,6 +292,43 @@ Feature: Catalog >> Products
     And I set Maximum qty "1000"
     Then Click "save"
     Then I should see saved successfully message
+
+  @PL_10
+  Scenario: Verify user must be able to see download catalog pdf button and verify downloaded file
+    Given Verify user must be able to see "Download catalog as PDF" Button
+    And Verify user must be able to click on "Download catalog as PDF" Button
+    And Verify user must be able to check downloaded Export file from "C:\Users\User\Downloads\pdfcatalog.pdf"
+
+  @RNDM_01
+  Scenario: Verify user must be able to search product by name under related products
+    Given I should see data table
+    And I should edit "Apple MacBook Pro 13-inch" details by click "Edit"
+    Then I should see "Edit product details - Apple MacBook Pro 13-inch"
+    And Click add new button in related record
+    And Search new product name in related record
+    Then I search related product name "Build your own computer" and verify in table
+    Then Click "save"
+    Then Verify new added product in related product table by name Build your own computer
+
+  @RNDM_02
+  Scenario: Verify user must be able to search product by category under related products
+    Given I should see data table
+    And I should edit "Apple MacBook Pro 13-inch" details by click "Edit"
+    Then I should see "Edit product details - Apple MacBook Pro 13-inch"
+    And Click add new button in related record
+    And Search new product name in related record
+    Then I search related product category "Electronics >> Others" and verify in table
+    Then Click "save"
+
+  @RNDM_03
+  Scenario: Verify user must be able to search product by Vendor under related products
+    Given I should see data table
+    And I should edit "Apple MacBook Pro 13-inch" details by click "Edit"
+    Then I should see "Edit product details - Apple MacBook Pro 13-inch"
+    And Click add new button in related record
+    And Search new product name in related record
+    Then I search related product Vendor "Vendor 1" and verify in table
+    Then Click "save"
 
   @PL_62
     Scenario: Verify user must be able to change product backorders under inventory

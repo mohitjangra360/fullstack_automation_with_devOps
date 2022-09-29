@@ -136,9 +136,9 @@ def set_dob(context, dob):
 
 
 @step('I set customer role as "{}"')
-def set_customer_role(context, role):
+def set_customer_role(context, first):
     btn = Catalog_Product(context.driver)
-    btn.set_customer_role(role)
+    btn.set_customer_role(first)
 
 
 @Step('I should able to see "{}" Button')
@@ -238,9 +238,9 @@ def step_impl(context):
 
 
 @step('I should edit "{}" details by click "{}"')
-def step_impl(context, productfullname, clickedit):
+def step_impl(context, fullname, clickedit):
     edit = Catalog_Product(context.driver)
-    edit.select_edit_by_productname(productfullname, clickedit)
+    edit.select_edit_by_name(fullname, clickedit)
 
 
 @step('I select manufacturers "{}"')
@@ -248,6 +248,10 @@ def i_select_manufacturers(context, first):
     select = Catalog_Product(context.driver)
     select.select_categories_manufacturers(first)
 
+@step('I set page on Advance')
+def i_select_manufacturers(context):
+    advance = Catalog_Product(context.driver)
+    advance.move_to_advance()
 
 @step('Click "{}"')
 def i_set_price(context, select):
@@ -262,9 +266,9 @@ def i_should_see_saved_successfully_message(context):
 
 
 @step('I set product name "{}"')
-def i_set_products_name(context, product_name):
+def i_set_products_name(context, name):
     btn = Catalog_Product(context.driver)
-    btn.i_set_products_name(product_name)
+    btn.i_set_products_name(name)
 
 
 @step('I set short description "{}"')
@@ -277,6 +281,11 @@ def i_set_short_description(context, short_descp):
 def i_set_full_description(context, full_descp):
     btn = Catalog_Product(context.driver)
     btn.i_set_full_description(full_descp)
+
+@step('I set description "{}"')
+def i_set_full_description(context, descp):
+    btn = Catalog_Product(context.driver)
+    btn.i_set_description(descp)
 
 
 @step('I select categories first "{}" and second "{}"')
@@ -296,18 +305,15 @@ def i_set_product_type(context, types):
     producttype = Catalog_Product(context.driver)
     producttype.set_product_type(types)
 
-
 @step('I set Vendor type "{}"')
 def i_set_Vendor_type(context, type):
     vendortype = Catalog_Product(context.driver)
     vendortype.set_vendor_type(type)
 
-
 @step('I set Available start date "{}"')
 def i_set_available_start_date(context, startdate):
     date = Catalog_Product(context.driver)
     date.set_available_start_date(startdate)
-
 
 @step('I set Available end date "{}"')
 def i_set_available_start_date(context, enddate):
@@ -337,6 +343,37 @@ def i_set_min_qty(context, qty):
 def i_set_min_qty(context, qty):
     quantity = Catalog_Product(context.driver)
     quantity.set_Max_cart_qty(qty)
+
+@Step('Click add new button in related record')
+def step_impl(context):
+    click_cbox = Catalog_Product(context.driver)
+    click_cbox.click_add_new_product_in_related_products()
+
+@step('I search related product name "{}" and verify in table')
+def i_search_related_products_name(context, name):
+    btn = Catalog_Product(context.driver)
+    btn.i_search_relatedproducts_name(name)
+
+@step('I search related product category "{}" and verify in table')
+def i_search_related_products_name(context, name):
+    btn = Catalog_Product(context.driver)
+    btn.i_search_relatedproducts_category(name)
+
+@step('I search related product Vendor "{}" and verify in table')
+def i_search_related_products_name(context, name):
+    btn = Catalog_Product(context.driver)
+    btn.i_search_relatedproducts_Vendor(name)
+
+@Step('Search new product name in related record')
+def step_impl(context):
+    popupwindow = Catalog_Product(context.driver)
+    popupwindow.search_new_product_in_related_products()
+#
+@Step('Verify new added product in related product table by name {}')
+def step_impl(context, name):
+    verify_result = Catalog_Product(context.driver)
+    verify_result.verifynew_added_product_in_related_products_byname(name)
+
 
 
 @step('I should see "{}" Button')
