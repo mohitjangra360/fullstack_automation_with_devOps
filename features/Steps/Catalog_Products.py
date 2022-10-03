@@ -282,12 +282,6 @@ def i_set_full_description(context, full_descp):
     btn = Catalog_Product(context.driver)
     btn.i_set_full_description(full_descp)
 
-@step('I set description "{}"')
-def i_set_full_description(context, descp):
-    btn = Catalog_Product(context.driver)
-    btn.i_set_description(descp)
-
-
 @step('I select categories first "{}" and second "{}"')
 def i_select_categories(context, first, second):
     select = Catalog_Product(context.driver)

@@ -76,7 +76,7 @@ Feature: Catalog >> Products
 #    Then I am goto "Products" Page
 
 
-  @PL_01
+  @PL_01 @Aditya
   Scenario: Verify user must be able to see and click on "Add new" button
     Given I should see "Add new" button
     And I click on add new button
@@ -115,7 +115,7 @@ Feature: Catalog >> Products
     Then I should see Export to Excel (all found)
     Then I should see Export to Excel (selected)
 
-  @PL_08
+  @PL_08 @Aditya
   Scenario: Verify user able to create new products
     Given I click on add new button
     And I wait 2 seconds
@@ -157,7 +157,7 @@ Feature: Catalog >> Products
     Then I should able to click YES on Delete POPUP
     And I wait 10 seconds
 
-  @PL_15
+  @PL_15 @Aditya
   Scenario: Verify  user must be able to search products by warehouse
     Given I should see "SearchWarehouseId" select field by id
     And I should click "SearchWarehouseId" select field by "id" and select "Warehouse 1 (New York)"
@@ -180,7 +180,7 @@ Feature: Catalog >> Products
     And I wait 5 seconds
     Then I should see SKU EG_GEM_NL on edit page of that product
 
-  @PL_22
+  @PL_22 @Aditya
   Scenario: Verify user must be select multiple product in table by checkbox
     Given I should see data table
     And I should click all items checkboxes
@@ -192,7 +192,7 @@ Feature: Catalog >> Products
     Then I should see the product SKU field
     Then I should able to change product Sku field by AP_MBP_15 with tag input & save it
 
-  @PL_29
+  @PL_29 @Aditya
   Scenario: Verify user must be able to change product manufacturer under product info
     Given I should see data table
     And I should edit "Build your own computer" details by click "Edit"
@@ -219,7 +219,7 @@ Feature: Catalog >> Products
     Then I should able to change product ProductType field by Grouped (product with variants) with tag select & save it
 
 
-  @PL_36
+  @PL_36 @Aditya
   Scenario: Verify user must be able to change product customer role under product info
     Given I should see data table
     And I should edit "Apple MacBook Pro 13-inch" details by click "Edit"
@@ -247,7 +247,7 @@ Feature: Catalog >> Products
     Then I should able to change product AvailableEndDate field by 10/10/2022 1:00:00 PM with tag input & save it
 
 
-  @PL_43
+  @PL_43 @Aditya
   Scenario: Verify user must be able to change product Mark as new and Start date under product info
     Given I should see data table
     And I should edit "HP Spectre XT Pro UltraBook" details by click "Edit"
@@ -266,7 +266,7 @@ Feature: Catalog >> Products
     Then I should able to change product cost field by 120 & save it
 
 
-  @PL_50
+  @PL_50 @Aditya
   Scenario: Verify user must be able to change product shipping weight under shipping
     Given I should see data table
     And I should edit "Apple MacBook Pro 13-inch" details by click "Edit"
@@ -283,7 +283,7 @@ Feature: Catalog >> Products
     Then I should able to change product DeliveryDate field by 1-2 days with tag select & save it
 
 
-  @PL_57
+  @PL_57 @Aditya
   Scenario: Verify user must be able to change product Stock quantity under inventory
     Given I should see data table
     And I should edit "Apple MacBook Pro 13-inch" details by click "Edit"
@@ -293,13 +293,13 @@ Feature: Catalog >> Products
     Then Click "save"
     Then I should see saved successfully message
 
-  @PL_10
+  @PL_10 @Aditya
   Scenario: Verify user must be able to see download catalog pdf button and verify downloaded file
     Given Verify user must be able to see "Download catalog as PDF" Button
     And Verify user must be able to click on "Download catalog as PDF" Button
     And Verify user must be able to check downloaded Export file from "C:\Users\User\Downloads\pdfcatalog.pdf"
 
-  @RNDM_01
+  @RNDM_01 @Aditya
   Scenario: Verify user must be able to search product by name under related products
     Given I should see data table
     And I should edit "Apple MacBook Pro 13-inch" details by click "Edit"
@@ -310,7 +310,7 @@ Feature: Catalog >> Products
     Then Click "save"
     Then Verify new added product in related product table by name Build your own computer
 
-  @RNDM_02
+  @RNDM_02 @Aditya
   Scenario: Verify user must be able to search product by category under related products
     Given I should see data table
     And I should edit "Apple MacBook Pro 13-inch" details by click "Edit"
@@ -320,7 +320,7 @@ Feature: Catalog >> Products
     Then I search related product category "Electronics >> Others" and verify in table
     Then Click "save"
 
-  @RNDM_03
+  @RNDM_03 @Aditya
   Scenario: Verify user must be able to search product by Vendor under related products
     Given I should see data table
     And I should edit "Apple MacBook Pro 13-inch" details by click "Edit"

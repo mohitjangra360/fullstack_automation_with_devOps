@@ -57,6 +57,7 @@ class Catalog_Product:
     def i_click_on_delete_btn(self):
         self.driver.find_element(By.XPATH, "//button[@id='delete-selected']").click()
 
+    # CREATED BY ADITYA
     def i_set_products_name(self, name):
         self.driver.find_element(By.XPATH, "//input[@id='Name']").send_keys(name)
 
@@ -64,17 +65,11 @@ class Catalog_Product:
     def i_set_short_description(self, short_descp):
         self.driver.find_element(By.XPATH, "//textarea[@id='ShortDescription']").send_keys(short_descp)
 
+    # CREATED BY ADITYA
     def i_set_full_description(self, full_descp):
         self.driver.switch_to.frame(self.driver.find_element(By.XPATH, "//iframe[@id='FullDescription_ifr']"))
         self.driver.find_element(By.XPATH, "//body[@id='tinymce']").send_keys(full_descp)
         time.sleep(2)
-        self.driver.switch_to.default_content()
-
-    def i_set_description(self, descp):
-        self.driver.switch_to.frame(self.driver.find_element(By.XPATH, "//iframe[@id='Description_ifr']"))
-        self.driver.find_element(By.XPATH, "//body[@id='tinymce']").send_keys(descp)
-        time.sleep(2)
-
         self.driver.switch_to.default_content()
 
 
@@ -104,6 +99,7 @@ class Catalog_Product:
     def set_dob(self, dob):
         self.driver.find_element(By.XPATH, "//input[@id='DateOfBirth']").send_keys(dob)
 
+    # CREATED BY ADITYA
     def set_customer_role(self, first):
         CustomerRole_list_by_xpath = "//div[@role='listbox']//input[@aria-describedby='SelectedCustomerRoleIds_taglist']"
         self.driver.find_element(By.XPATH, CustomerRole_list_by_xpath).click()
@@ -122,10 +118,8 @@ class Catalog_Product:
             self.driver.find_element(By.XPATH,
                                      f"//div[@class='k-list-scroller']//ul[@id='SelectedCustomerRoleIds_listbox']//li[text()= '{first}']").click()
             time.sleep(2)
-            # self.driver.find_element(By.XPATH, "//html").click()
-            # time.sleep(2)
 
-
+    # CREATED BY ADITYA
     def i_select_product_to_delete(self):
         Checkbox_values = "//tbody//input[@class='checkboxGroups']"
         get_checkboxvalues = self.driver.find_elements(By.XPATH, Checkbox_values)
@@ -243,6 +237,7 @@ class Catalog_Product:
             max_qty.send_keys(qty)
             time.sleep(2)
 
+    # CREATED BY ADITYA
     def select_categories(self, first, second):
         Category_list_by_xpath = "//div[@role='listbox']//input[@aria-describedby='SelectedCategoryIds_taglist']"
         self.driver.find_element(By.XPATH, Category_list_by_xpath).click()
@@ -280,6 +275,7 @@ class Catalog_Product:
             weightfield.send_keys(weight)
             time.sleep(2)
 
+    # CREATED BY ADITYA
     def set_price(self, price):
         pricefield = self.driver.find_element(By.XPATH, "//div[@id='product-price']//input[@id='Price']//..//input[1]")
         check = pricefield.is_displayed()
@@ -294,24 +290,29 @@ class Catalog_Product:
             pricefield.send_keys(price)
             time.sleep(2)
 
+    # CREATED BY ADITYA
     def set_available_start_date(self, startdate):
         self.driver.find_element(By.XPATH,
                                  "//span[@class='k-picker-wrap k-state-default']//input[@id='AvailableStartDateTimeUtc']").send_keys(
             f"{startdate}")
         time.sleep(2)
 
+    # CREATED BY ADITYA
     def set_available_end_date(self, enddate):
         self.driver.find_element(By.XPATH,
                                  "//span[@class='k-picker-wrap k-state-default']//input[@id='AvailableEndDateTimeUtc']").send_keys(
             f"{enddate}")
         time.sleep(2)
 
+    # CREATED BY ADITYA
     def set_vendor_type(self, type):
         self.driver.find_element(By.XPATH, "//select[@name='VendorId']").click()
         time.sleep(2)
+
         self.driver.find_element(By.XPATH,
                                  f"//select[@name='VendorId']//option[contains(text(), '{type}')]").click()
 
+    # CREATED BY ADITYA
     def set_product_type(self, types):
         Product_type = self.driver.find_element(By.XPATH,
                                                 f"//select[@name='ProductTypeId']//option[contains(text(), '{types}')]").is_displayed()
@@ -323,20 +324,22 @@ class Catalog_Product:
             self.driver.find_element(By.XPATH,
                                      f"//select[@name='ProductTypeId']//option[contains(text(), '{types}')]").click()
 
+    # CREATED BY ADITYA
     def set_product_tags(self, tag):
         time.sleep(2)
         self.driver.execute_script(f"document.getElementById('ProductTags').getElementsByTagName('div').value='test'")
         #argument().click()
         time.sleep(2)
 
+    # CREATED BY ADITYA
     def i_change_product_cost_and_save(self, cost):
-        # field_xpath = f"//input[contains(@id,'{field}')]"
         field_xpath = "//*/div[@class='card-body']/div[3]/div[2]/span[1]/span[1]/input[1]"
         self.driver.find_element(By.XPATH, field_xpath).send_keys(f'{cost}')
         time.sleep(5)
         self.driver.find_element(By.XPATH, self.save_btn_xpath).submit()
         time.sleep(5)
 
+    # CREATED BY ADITYA
     def i_see_search_result_by_warehouse(self):
         no_data = self.driver.find_elements(By.XPATH, "//div[@id='products-grid_wrapper']//div//table//tbody//tr")
         if 'No data available in table' in no_data:
@@ -346,6 +349,7 @@ class Catalog_Product:
             length = len(no_of_row)
             print(length)
 
+    # CREATED BY ADITYA
     def i_should_see_table(self):
         now_of_row = self.driver.find_element(By.XPATH, "//table[contains(@id,'grid')]")
         if now_of_row.is_displayed():
@@ -353,6 +357,7 @@ class Catalog_Product:
         else:
             assert False
 
+    # CREATED BY ADITYA
     def user_should_able_to_click_all_checkboxes(self):
         if 'dataTables_empty' in self.driver.page_source:
             print("No data in table to select")
@@ -368,6 +373,7 @@ class Catalog_Product:
                 self.driver.find_element(By.XPATH,
                                          f"//div[@id='products-grid_wrapper']//div//table//tbody//input[@value={i}]").click()
 
+    # CREATED BY ADITYA
     def select_edit_by_name(self, fullname, clickedit):
         Product_title = "Products / nopCommerce administration"
         Categories_title = "Categories / nopCommerce administration"
@@ -395,6 +401,7 @@ class Catalog_Product:
         else:
             assert False
 
+    # CREATED BY ADITYA
     def select_deletecheckbox_by_name(self, fullname):
         full_name = f"//div[@id='categories-grid_wrapper']//div//table//tbody//tr//*[text()='{fullname}']//..//input"
         get_fullname = self.driver.find_elements(By.XPATH, f"{full_name}")
@@ -407,6 +414,7 @@ class Catalog_Product:
         self.driver.find_element(By.XPATH, checkbox).click()
         time.sleep(2)
 
+    # CREATED BY ADITYA
     def select_categories_manufacturers(self, first):
         Manufacturers_list_by_xpath = "//div[@role='listbox']//input[@aria-describedby='SelectedManufacturerIds_taglist']"
         self.driver.find_element(By.XPATH, Manufacturers_list_by_xpath).click()
@@ -425,6 +433,7 @@ class Catalog_Product:
             # self.driver.find_element(By.XPATH, "//section[@class='content']").click()
             # time.sleep(2)
 
+    # CREATED BY ADITYA
     def move_to_advance(self):
         Advance = "sidebar-mini layout-fixed control-sidebar-slide-open advanced-settings-mode"
         Basic = "sidebar-mini layout-fixed control-sidebar-slide-open basic-settings-mode"
@@ -434,10 +443,12 @@ class Catalog_Product:
         else:
             print("we're already in advance")
 
+    # CREATED BY ADITYA
     def save_product_details(self, select):
         self.driver.find_element(By.XPATH, f"//button[@name='{select}']").click()
         time.sleep(2)
 
+    # CREATED BY ADITYA
     def verify_success_save(self):
         success_text_1 = "The new product has been added successfully."
         success_text_2 = "The product has been updated successfully."
@@ -453,14 +464,17 @@ class Catalog_Product:
         else:
             assert False
 
+    # CREATED BY ADITYA
     def user_mark_product_as_new(self, mark):
         self.driver.find_element(By.ID, f"{mark}").click()
 
+    # CREATED BY ADITYA
     def search_new_product_in_related_products(self):
         time.sleep(2)
         self.driver.switch_to.window(self.driver.window_handles[1])
         time.sleep(2)
 
+    # CREATED BY ADITYA
     def i_search_relatedproducts_name(self, name):
         self.driver.find_element(By.XPATH, "//input[@id='SearchProductName']").send_keys(name)
         time.sleep(2)
@@ -481,6 +495,7 @@ class Catalog_Product:
         else:
             print("no match")
 
+    # CREATED BY ADITYA
     def click_add_new_product_in_related_products(self):
         tab_click = "//div[@id='product-related-products']//button[@data-card-widget='collapse']"
         tabs = self.driver.find_element(By.ID, "btnAddNewRelatedProduct").is_displayed()
@@ -494,6 +509,7 @@ class Catalog_Product:
             self.driver.find_element(By.ID, "btnAddNewRelatedProduct").click()
             time.sleep(2)
 
+    # CREATED BY ADITYA
     def i_search_relatedproducts_category(self, name):
         self.driver.find_element(By.XPATH, "//select[@id='SearchCategoryId']").click()
         time.sleep(2)
@@ -524,6 +540,7 @@ class Catalog_Product:
         else:
             print("no match")
 
+    # CREATED BY ADITYA
     def i_search_relatedproducts_Vendor(self, name):
         self.driver.find_element(By.XPATH, "//select[@id='SearchVendorId']").click()
         time.sleep(2)
@@ -554,6 +571,7 @@ class Catalog_Product:
         else:
             print("no match")
 
+    # CREATED BY ADITYA
     def verifynew_added_product_in_related_products_byname(self, name):
 
         get_table_vlue = self.driver.find_elements(By.XPATH, "//div[@id='relatedproducts-grid_wrapper']//div//table//tbody//tr//td[1]")
@@ -561,10 +579,6 @@ class Catalog_Product:
         for v in get_table_vlue:
             name_text = v.text
             get_value.append(name_text)
-        # if name in get_value:
-        #     assert True
-        # else:
-        #     assert False
         while name in get_value:
             time.sleep(3)
             try:
@@ -574,6 +588,7 @@ class Catalog_Product:
                 self.driver.find_element(By.XPATH,
                                          "//div[@id='products-grid_paginate']//li[@id='products-grid_next']//a").click()
 
+    # CREATED BY ADITYA
     def i_should_see_delete_button(self, value):
         delete_button_xpath = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
         display_delete_button = self.driver.find_element(By.XPATH, delete_button_xpath).is_displayed()
@@ -582,10 +597,12 @@ class Catalog_Product:
         else:
             assert False
 
+    # CREATED BY ADITYA
     def i_should_click_on_delete_button(self, value):
         click_on_delete_Button = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
         self.driver.find_element(By.XPATH, click_on_delete_Button).click()
 
+    # CREATED BY ADITYA
     def i_should_see_popup_message(self, value):
         see_popup_message = f"//div[@class='modal-content']//*[text()[contains(.,'{value}')]]"
         self.driver.find_element(By.XPATH, see_popup_message).is_displayed()
@@ -594,6 +611,7 @@ class Catalog_Product:
         else:
             assert False
 
+    # CREATED BY ADITYA
     def user_should_see_import_button(self, value):
         see_import_button_xpath = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
         display_import_button = self.driver.find_element(By.XPATH, see_import_button_xpath).is_displayed()
@@ -602,10 +620,12 @@ class Catalog_Product:
         else:
             assert False
 
+    # CREATED BY ADITYA
     def user_should_click_on_import_button(self, value):
         click_on_import_button = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
         self.driver.find_element(By.XPATH, click_on_import_button).click()
 
+    # CREATED BY ADITYA
     def user_should_see_popup_message(self, value):
         see_popup_message = self.driver.find_element(By.XPATH,
                                                      f"//div[@class='modal-dialog']//div//div//h4[contains(text(),'{value}')]").is_displayed()
@@ -614,6 +634,7 @@ class Catalog_Product:
         else:
             assert False
 
+    # CREATED BY ADITYA
     def user_should_click_on_import_from_excel(self, value):
         self.driver.find_element(By.XPATH, f"//div[@class='modal-footer']//button[contains(.,'{value}')]").click()
 
@@ -621,6 +642,7 @@ class Catalog_Product:
         ram = self.driver.find_element(By.XPATH, "//div[@class='modal-dialog']//form//input[@id='importexcelfile']")
         ram.send_keys(f"{path}")
 
+    # CREATED BY ADITYA
     def user_should_able_to_see_error_message_of_Import(self, childitem):
         ErrorMessage_1 = '×\nFor security purposes, the feature you have requested is not available on the demo site.'
         ErrorMessage_2 = '×\nPlease upload a file'
@@ -651,14 +673,17 @@ class Catalog_Product:
             else:
                 assert False
 
+    # CREATED BY ADITYA
     def user_should_click_on_search_button(self, value):
         see_search_button = self.driver.find_element(By.XPATH,
                                                      f"//div[@class='text-center col-12']//*[text()[contains(.,'{value}')]]").click()
 
+    # CREATED BY ADITYA
     def user_should_select_product_type(self, value):
         product_type = Select(self.driver.find_element(By.XPATH, "//select[@id='SearchProductTypeId']"))
         product_type.select_by_visible_text(value)
 
+    # CREATED BY ADITYA
     def user_should_be_able_to_see_edit_button(self):
         see_edit_button = self.driver.find_element(By.XPATH,
                                                    '//*[@id="products-grid"]/tbody/tr[5]/td[8]/a').is_displayed()

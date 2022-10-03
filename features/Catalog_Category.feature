@@ -7,7 +7,7 @@ Feature: Catalog >> Category
     And I login as admin
     Then I Select "Categories" from "Catalog"
 
-  @CC_01
+  @CC_01 @Aditya
   Scenario:Verify user must be able to see and click on "Add new" button
     Given I should see "Add new" button
     And I click on add new button
@@ -21,7 +21,7 @@ Feature: Catalog >> Category
     Then I should see Export to XML
     Then I should see Export to Excel
 
-  @CC_03
+  @CC_03 @Aditya
   Scenario: Verify user must be able to see and click on "Import" button
     Given Verify user must be able to see "Import" Button
     And Verify user must be able to click on "Import" Button
@@ -37,7 +37,7 @@ Feature: Catalog >> Category
     And I wait 3 seconds
     Then I should see "Are you sure?"
 
-  @CC_05
+  @CC_05 @Aditya
   Scenario: Verify user must be able to add new category
     Given I click on add new button
     And I wait 2 seconds
@@ -57,7 +57,7 @@ Feature: Catalog >> Category
     And I wait 10 seconds
     Then I should see downloaded file
 
-  @CC_07
+  @CC_07 @Aditya
   Scenario: Verify user must be able to see export option under export button
     Given Verify user must be able to see "Export" Button
     And Verify user must be able to click on drop down options button and select "Export to Excel"
@@ -73,7 +73,7 @@ Feature: Catalog >> Category
     And I should see message of "Categories" POP UP
 
 
-  @CC_09
+  @CC_09 @Aditya
   Scenario: Verify user must be able to delete selected category
     Given Verify user must be able to select "Apparel" checkbox to Delete
     Given Verify user must be able to see "Delete (selected)" Button
@@ -89,7 +89,7 @@ Feature: Catalog >> Category
     Then I see search result by Published field and count number of items
 
 
-  @CC_11
+  @CC_11 @Aditya
   Scenario: Verify user must be able to search category with name via Published only
     Given I should see search "SearchPublishedId" select field by "id"
     And I should click "SearchPublishedId" select field by "id" and select "Published only"
@@ -104,7 +104,7 @@ Feature: Catalog >> Category
     Then I should click "Search"
     Then I see search result by Published field and count number of items
 
-  @CC_13
+  @CC_13 @Aditya
   Scenario: Verify user must be able to edit any category from table
     Given I should see data table
     And I should edit "Gift Cards" details by click "Edit"
@@ -125,7 +125,7 @@ Feature: Catalog >> Category
     And I wait 10 seconds
     Then I should see saved successfully message on category
 
-  @CC_15
+  @CC_15 @Aditya
   Scenario: Verify user must be able to change category description under category info
     Given I should see data table
     And I should edit "Gift Cards" details by click "Edit"
@@ -144,7 +144,7 @@ Feature: Catalog >> Category
     Then I should able to click save Save Button
     Then I should see saved successfully message on category
 
-  @CC_17
+  @CC_17 @Aditya
   Scenario: Verify user must be able to change category picture under category info
     Given I should see data table
     And I should edit "Gift Cards" details by click "Edit"
@@ -162,7 +162,7 @@ Feature: Catalog >> Category
     Then I should able to click save Save Button
     Then I should see saved successfully message on category
 
-  @CC_19
+  @CC_19 @Aditya
   Scenario: Verify user must be able to change category show on home page checkbox as true or false under display
     Given I should see data table
     And I should edit "Gift Cards" details by click "Edit"
@@ -180,7 +180,7 @@ Feature: Catalog >> Category
     Then I should able to click save Save Button
     Then I should see saved successfully message on category
 
-  @CC_21
+  @CC_21 @Aditya
   Scenario: Verify user must be able to change category allow customer to select page size checkbox as true or false under display
     Given I should see data table
     And I should edit "Gift Cards" details by click "Edit"
@@ -199,7 +199,7 @@ Feature: Catalog >> Category
     Then I should able to click save Save Button
     Then I should see saved successfully message on category
 
-  @CC_23
+  @CC_23 @Aditya
   Scenario: Verify user must be able to change category display order under display
     Given I should see data table
     And I should edit "Gift Cards" details by click "Edit"

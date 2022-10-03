@@ -11,12 +11,23 @@ class Catalog_Category:
     def __init__(self, driver):
         self.driver = driver
 
+    # CREATED BY ADITYA
     def user_should_able_to_click_Button(self, value):
 
         Import_Button = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
         self.driver.find_element(By.XPATH, Import_Button).click()
         time.sleep(2)
 
+    # CREATED BY ADITYA
+    def i_set_description(self, descp):
+        time.sleep(2)
+        self.driver.switch_to.frame(self.driver.find_element(By.XPATH, "//iframe[@id='Description_ifr']"))
+        self.driver.find_element(By.XPATH, "//body[@id='tinymce']").send_keys(descp)
+        time.sleep(2)
+
+        self.driver.switch_to.default_content()
+
+    # CREATED BY ADITYA
     def user_should_able_to_click_Exportoptions_Button_expand(self, value):
 
         Drop_down_btn = "//div[@class='float-right']//button[@data-toggle='dropdown']"
@@ -27,6 +38,7 @@ class Catalog_Category:
         self.driver.find_element(By.XPATH, options_export).click()
         time.sleep(2)
 
+    # CREATED BY ADITYA
     def user_should_able_to_see_import_popup(self, value):
         POP_UP_DISPLAY = self.driver.find_element(By.XPATH,
                                                   f"//div[@class='modal-dialog']//div//div//h4[contains(text(),'{value}')]").is_displayed()
@@ -35,10 +47,12 @@ class Catalog_Category:
         else:
             assert False
 
+    # CREATED BY ADITYA
     def user_should_able_to_select_import_file(self, path):
         self.driver.find_element(By.XPATH, "//div[@class='modal-dialog']//form//input[@id='importexcelfile']").send_keys(f'{path}')
         time.sleep(2)
 
+    # CREATED BY ADITYA
     def user_should_able_to_select_picture_file(self, path):
         time.sleep(2)
         self.driver.find_element(By.XPATH, "//div[@class='qq-upload-button-selector btn bg-gradient-green']").click()
@@ -47,9 +61,11 @@ class Catalog_Category:
         pyautogui.press('enter')
         time.sleep(2)
 
+    # CREATED BY ADITYA
     def user_should_able_to_click_button_of_Import(self, value):
         self.driver.find_element(By.XPATH, f"//div[@class='modal-footer']//button[contains(.,'{value}')]").click()
 
+    # CREATED BY ADITYA
     def user_should_able_to_see_error_message_of_Import(self, childitem):
         ErrorMessage_1 ='×\nFor security purposes, the feature you have requested is not available on the demo site.'
         ErrorMessage_2 ='×\nPlease upload a file'
@@ -80,6 +96,7 @@ class Catalog_Category:
             else:
                 assert False
 
+    # CREATED BY ADITYA
     def select_parent_categories(self, first):
         parent_categories_by_xpath = "//select[@id='ParentCategoryId']"
         self.driver.find_element(By.XPATH, parent_categories_by_xpath).click()
@@ -95,6 +112,7 @@ class Catalog_Category:
             self.driver.find_element(By.XPATH, f"//select[@id='ParentCategoryId']//option[text()= '{first}']").click()
             time.sleep(2)
 
+    # CREATED BY ADITYA
     def go_to_childitem_page(self, childitem, parentitem):
         ParentItem = f"//ul[@class='nav nav-pills nav-sidebar flex-column nav-legacy']//a[@href='#' and @class='nav-link']//p[contains(text(),'{parentitem}')]"
         self.driver.find_element(By.XPATH, ParentItem).click()
@@ -103,6 +121,7 @@ class Catalog_Category:
         self.driver.find_element(By.XPATH, childitem).click()
         time.sleep(3)
 
+    # CREATED BY ADITYA
     def user_should_able_to_see_Button(self, value):
 
         Button = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
@@ -112,6 +131,7 @@ class Catalog_Category:
         else:
             assert False
 
+    # CREATED BY ADITYA
     def user_should_able_to_click_Delete_Button(self, value):
 
         if 'dataTables_empty' in self.driver.page_source:
@@ -136,11 +156,13 @@ class Catalog_Category:
             self.driver.find_element(By.XPATH, Button).click()
             time.sleep(5)
 
+    # CREATED BY ADITYA
     def user_should_able_to_delete_selected_Delete_Button(self, value):
         Button = f"//div[@class='float-right']//*[text()[contains(.,'{value}')]]"
         self.driver.find_element(By.XPATH, Button).click()
         time.sleep(3)
 
+    # CREATED BY ADITYA
     def user_should_able_to_click_YES_delete_popup(self):
         Click_YES = "//div[@class='modal-content']//div[@class='modal-footer']//button[contains(text(), 'Yes')]"
         Click_OK = "//div[@id='nothingSelectedAlert-action-alert']//div[@class='modal-footer']//span[contains(text(), 'Ok')]"
@@ -154,6 +176,7 @@ class Catalog_Category:
         else:
             print("deleted done")
 
+    # CREATED BY ADITYA
     def select_deletecheckbox_by_name(self, fullname):
 
         if 'dataTables_empty' in self.driver.page_source:
@@ -177,6 +200,7 @@ class Catalog_Category:
                     except Exception:
                         self.driver.find_element(By.XPATH, "//div[@id='products-grid_paginate']//li[@id='products-grid_next']//a").click()
 
+    # CREATED BY ADITYA
     def search_result_by_Published_Only_and_Verify(self):
         published_value = "//div[@id='categories-grid_wrapper']//div//table//tbody//tr//td[3]//i"
         get_fullname = self.driver.find_elements(By.XPATH, f"{published_value}")
@@ -191,6 +215,7 @@ class Catalog_Category:
                 else:
                     assert False
 
+    # CREATED BY ADITYA
     def Verify_downloaded_file(self, path):
         while not os.path.exists(r'C:\Users\User\Downloads'):
             time.sleep(2)
@@ -202,9 +227,11 @@ class Catalog_Category:
 
         os.remove(fr'{path}')
 
+    # CREATED BY ADITYA
     def i_set_display_order(self, order):
         self.driver.find_element(By.XPATH, "//input[@id='DisplayOrder']//..//input").send_keys(order)
 
+    # CREATED BY ADITYA
     def click_Show_on_home_page_checkbox(self):
         tab_click = "//div[@id='category-display']//button[@data-card-widget='collapse']"
         tabs = self.driver.find_element(By.XPATH, "//label[contains(text(), 'Show on home page')]").is_displayed()
@@ -218,6 +245,7 @@ class Catalog_Category:
             self.driver.find_element(By.XPATH, "//div[@class='form-group row advanced-setting']//span[@data-valmsg-for='ShowOnHomepage']//..//input[@id='ShowOnHomepage']").click()
             time.sleep(2)
 
+    # CREATED BY ADITYA
     def allow_customers_to_select_page_size(self):
         tabs = self.driver.find_element(By.XPATH, "//div[@id='category-display']//i[@class='fa toggle-icon fa-minus']").is_displayed()
         tab_click = "//div[@class='card-header with-border clearfix']//div[contains(text(), 'Display')]"
