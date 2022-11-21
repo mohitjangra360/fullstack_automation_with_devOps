@@ -2094,3 +2094,132 @@
 10/03/2022 03:59:14 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\106.0.5249\chromedriver.exe] found in cache
 10/03/2022 03:59:16 PM: INFO: Open Browser
 10/03/2022 03:59:18 PM: INFO: Close Browser
+11/08/2022 11:32:39 AM: INFO: ====== WebDriver manager ======
+11/08/2022 11:32:40 AM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/08/2022 11:32:41 AM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/08/2022 11:32:43 AM: INFO: Open Browser
+11/08/2022 11:33:39 AM: INFO: ====== WebDriver manager ======
+11/08/2022 11:33:40 AM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/08/2022 11:33:40 AM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/08/2022 11:33:42 AM: INFO: Open Browser
+11/08/2022 11:41:40 AM: INFO: ====== WebDriver manager ======
+11/08/2022 11:41:41 AM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/08/2022 11:41:42 AM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/08/2022 11:41:43 AM: INFO: Open Browser
+11/08/2022 11:48:29 AM: INFO: ====== WebDriver manager ======
+11/08/2022 11:48:30 AM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/08/2022 11:48:31 AM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/08/2022 11:48:33 AM: INFO: Open Browser
+11/08/2022 11:51:24 AM: INFO: ====== WebDriver manager ======
+11/08/2022 11:51:24 AM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/08/2022 11:51:32 AM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/08/2022 11:51:33 AM: INFO: Open Browser
+11/08/2022 11:58:10 AM: INFO: ====== WebDriver manager ======
+11/08/2022 11:58:11 AM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/08/2022 11:58:12 AM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/08/2022 11:58:13 AM: INFO: Open Browser
+11/08/2022 11:59:04 AM: INFO: ====== WebDriver manager ======
+11/08/2022 11:59:05 AM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/08/2022 11:59:05 AM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/08/2022 11:59:06 AM: INFO: Open Browser
+11/09/2022 05:25:32 PM: INFO: ====== WebDriver manager ======
+11/09/2022 05:25:33 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/09/2022 05:25:34 PM: INFO: About to download new driver from https://chromedriver.storage.googleapis.com/107.0.5304.62/chromedriver_win32.zip
+11/09/2022 05:25:35 PM: INFO: Driver has been saved in cache [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304]
+11/09/2022 05:25:38 PM: INFO: Open Browser
+11/11/2022 03:35:32 PM: INFO: ====== WebDriver manager ======
+11/11/2022 03:35:33 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/11/2022 03:35:34 PM: INFO: About to download new driver from https://chromedriver.storage.googleapis.com/107.0.5304.62/chromedriver_win32.zip
+11/11/2022 03:35:45 PM: INFO: Driver has been saved in cache [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304]
+11/11/2022 03:35:47 PM: INFO: Open Browser
+11/11/2022 07:00:56 PM: INFO: ====== WebDriver manager ======
+11/11/2022 07:00:56 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/11/2022 07:00:57 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/11/2022 07:00:58 PM: INFO: Open Browser
+11/11/2022 07:01:45 PM: INFO: ====== WebDriver manager ======
+11/11/2022 07:01:45 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/11/2022 07:01:46 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/11/2022 07:01:47 PM: INFO: Open Browser
+11/11/2022 07:02:55 PM: INFO: ====== WebDriver manager ======
+11/11/2022 07:02:55 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/11/2022 07:02:56 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/11/2022 07:02:57 PM: INFO: Open Browser
+11/11/2022 07:05:02 PM: INFO: ====== WebDriver manager ======
+11/11/2022 07:05:02 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/11/2022 07:05:03 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/11/2022 07:05:04 PM: INFO: Open Browser
+11/14/2022 02:15:39 PM: INFO: ====== WebDriver manager ======
+11/14/2022 02:15:40 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/14/2022 02:15:41 PM: INFO: About to download new driver from https://chromedriver.storage.googleapis.com/107.0.5304.62/chromedriver_win32.zip
+11/14/2022 02:15:42 PM: INFO: Driver has been saved in cache [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304]
+11/14/2022 02:15:44 PM: INFO: Open Browser
+11/14/2022 02:17:05 PM: INFO: ====== WebDriver manager ======
+11/14/2022 02:17:05 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/14/2022 02:17:06 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/14/2022 02:17:07 PM: INFO: Open Browser
+11/14/2022 02:18:03 PM: INFO: ====== WebDriver manager ======
+11/14/2022 02:18:03 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/14/2022 02:18:04 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/14/2022 02:18:05 PM: INFO: Open Browser
+11/14/2022 02:20:29 PM: INFO: ====== WebDriver manager ======
+11/14/2022 02:20:29 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/14/2022 02:20:30 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/14/2022 02:20:31 PM: INFO: Open Browser
+11/14/2022 02:28:26 PM: INFO: ====== WebDriver manager ======
+11/14/2022 02:28:26 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/14/2022 02:28:27 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/14/2022 02:28:28 PM: INFO: Open Browser
+11/14/2022 02:31:01 PM: INFO: ====== WebDriver manager ======
+11/14/2022 02:31:02 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/14/2022 02:31:02 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/14/2022 02:31:03 PM: INFO: Open Browser
+11/14/2022 05:36:29 PM: INFO: ====== WebDriver manager ======
+11/14/2022 05:36:30 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/14/2022 05:36:31 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/14/2022 05:36:32 PM: INFO: Open Browser
+11/14/2022 05:37:16 PM: INFO: ====== WebDriver manager ======
+11/14/2022 05:37:17 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/14/2022 05:37:18 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/14/2022 05:37:19 PM: INFO: Open Browser
+11/14/2022 05:39:50 PM: INFO: ====== WebDriver manager ======
+11/14/2022 05:39:50 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/14/2022 05:39:51 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/14/2022 05:39:52 PM: INFO: Open Browser
+11/14/2022 05:48:16 PM: INFO: ====== WebDriver manager ======
+11/14/2022 05:48:17 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/14/2022 05:48:18 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/14/2022 05:48:19 PM: INFO: Open Browser
+11/14/2022 05:57:46 PM: INFO: ====== WebDriver manager ======
+11/14/2022 05:57:46 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/14/2022 05:57:47 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/14/2022 05:57:48 PM: INFO: Open Browser
+11/14/2022 06:12:03 PM: INFO: ====== WebDriver manager ======
+11/14/2022 06:12:04 PM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/14/2022 06:12:05 PM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/14/2022 06:12:06 PM: INFO: Open Browser
+11/16/2022 09:16:56 AM: INFO: ====== WebDriver manager ======
+11/16/2022 09:16:56 AM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/16/2022 09:16:57 AM: INFO: About to download new driver from https://chromedriver.storage.googleapis.com/107.0.5304.62/chromedriver_win32.zip
+11/16/2022 09:16:59 AM: INFO: Driver has been saved in cache [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304]
+11/16/2022 09:17:01 AM: INFO: Open Browser
+11/16/2022 09:24:18 AM: INFO: ====== WebDriver manager ======
+11/16/2022 09:24:19 AM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/16/2022 09:24:20 AM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/16/2022 09:24:21 AM: INFO: Open Browser
+11/16/2022 10:31:34 AM: INFO: ====== WebDriver manager ======
+11/16/2022 10:31:35 AM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/16/2022 10:31:36 AM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/16/2022 10:31:37 AM: INFO: Open Browser
+11/16/2022 10:55:48 AM: INFO: ====== WebDriver manager ======
+11/16/2022 10:55:49 AM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/16/2022 10:55:50 AM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/16/2022 10:55:51 AM: INFO: Open Browser
+11/16/2022 11:15:35 AM: INFO: ====== WebDriver manager ======
+11/16/2022 11:15:58 AM: INFO: ====== WebDriver manager ======
+11/16/2022 11:15:59 AM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/16/2022 11:15:59 AM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/16/2022 11:16:01 AM: INFO: Open Browser
+11/16/2022 11:22:46 AM: INFO: ====== WebDriver manager ======
+11/16/2022 11:22:46 AM: INFO: Get LATEST chromedriver version for google-chrome 107.0.5304
+11/16/2022 11:22:47 AM: INFO: Driver [C:\Users\User\.wdm\drivers\chromedriver\win32\107.0.5304\chromedriver.exe] found in cache
+11/16/2022 11:22:48 AM: INFO: Open Browser

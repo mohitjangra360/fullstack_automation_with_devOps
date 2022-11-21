@@ -1,0 +1,10 @@
+[Pre Conditions]
+
+Record_name = Nikhil
+
+Sender_phone = 12393125886
+Send_to_api = Mobile Phone
+Channel = SMS/MMS
+Folder = --None--
+Drip Campaign = --None--
+SMS Template = --None--
